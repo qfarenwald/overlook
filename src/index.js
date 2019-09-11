@@ -12,10 +12,6 @@ import './images/turing-logo.png'
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
-// fetching data
-// .then(console.log(users))
-// fetching data
-
 let users, rooms, bookings, roomServices
 
 fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users")
