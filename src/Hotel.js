@@ -1,10 +1,11 @@
 // import Class from './Class.js';
-// instantiate in index once fetch data
-// make data sets based off of real data
 
 class Hotel {
-  constructor(customers, rooms) {
-    this.customers = customers;
+  constructor(usersData, roomsData, roomsServicesData, bookingsData) {
+    this.users = usersData;
+    this.rooms = roomsData;
+    this.roomServices = roomsServicesData;
+    this.bookings = bookingsData;
   }
 
   getDate() {
@@ -16,20 +17,33 @@ class Hotel {
     return today;
   }
 
-  totalRoomsAvailToday() {
+  findRoomsBooked(date) {
+    return this.bookings.filter((booking) => {
+      return booking.date === date;
+    })
+  }
+
+  findRoomsServiced(date) {
+    return this.roomServices.filter((room) => {
+      return room.date === date;
+    })
+  }
+
+  totalRoomsAvailToday(date) {
 
   }
 
-  totalRevenueToday() {
+  totalRevenueToday(date) {
 
   }
 
-  percentageRoomsOccToday() {
+  percentageRoomsOccToday(date) {
 
   }
 
-  getCurrentCustomer() {
-    
+  getCurrentCustomer(id) {
+    //guestrepository
+
   }
 
 }

@@ -10,8 +10,6 @@ import './css/base.scss';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 
-console.log('This is the JavaScript entry file - your code begins here.');
-
 let users, rooms, bookings, roomServices
 
 fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users")
@@ -41,3 +39,5 @@ fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServ
 .catch(err => console.log(err));
 
 setTimeout(() => console.log('roomServices', roomServices), 1000)
+
+// let hotel = new Hotel(fill in arguments);
