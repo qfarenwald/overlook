@@ -26,4 +26,8 @@ describe('Hotel', () => {
     expect(hotel.getDate()).to.equal('2019/09/11');
   });
 
+  // it('should get total rooms avail today', () => {
+  //   expect(hotel.getDate()).to.equal('2019/09/11');
+  // });
+
 });

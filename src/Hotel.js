@@ -28,6 +28,10 @@ class Hotel {
 
   }
 
+  getCurrentCustomer() {
+    
+  }
+
 }
 
 export default Hotel;
