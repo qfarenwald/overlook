@@ -59,7 +59,8 @@ class Hotel {
   }
 
   percentageRoomsOccToday(date) {
-
+    let roomsBooked = this.findRoomsBooked(date)
+    return (roomsBooked.length / this.rooms.length) * 100
   }
 
   // getCurrentCustomer(id) {

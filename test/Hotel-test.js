@@ -82,7 +82,7 @@ describe('Hotel', () => {
   });
 
   it('should get percentage of rooms occupied today', () => {
-    expect(hotel.percentageRoomsOccToday("2019/09/15")).to.equal();
+    expect(hotel.percentageRoomsOccToday("2019/09/15")).to.equal(46);
   });
 
 });
