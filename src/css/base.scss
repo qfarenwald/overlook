@@ -9,10 +9,17 @@ $heading-font: 'Playfair Display';
 }
 
 $primary-background: #FFFFFF;
+$secondary-background: #dce7f7;
+$tertiary-background: grey;
 $primary-text: #000000;
 
 body {
-  background-color: $primary-background;
+  background-image: url("/images/bright-colors-daylight-2742812.jpg");
+  background-size: cover;
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
   font-family: $heading-font;
   margin: 0;
 }
@@ -35,10 +42,6 @@ p {
   font-family: sans-serif;
 }
 
-.tabs {
-  width: 100%;
-}
-
 ul {
   display: flex;
   padding-right: 40px;
@@ -56,8 +59,8 @@ li {
 }
 
 a {
-  background: #eaeaed;
-  border: 1px solid #cecfd5;
+  // background: $secondary-background;
+  border: 1px solid $tertiary-background;
   color: $primary-text;
   display: block;
   letter-spacing: 10px;
@@ -78,7 +81,8 @@ a:hover {
 }
 
 .tabs-info {
-  border: 1px solid #cecfd5;
+  background-color: $primary-background;
+  border: 1px solid $tertiary-background;
   clear: both;
   margin: 0 40px 40px 40px;
   padding: 40px 100px;
