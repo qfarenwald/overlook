@@ -1,6 +1,87 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display&display=swap);
+
+$heading-font: 'Playfair Display';
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+$primary-background: #FFFFFF;
+$primary-text: #000000;
 
 body {
   background-color: $primary-background;
+  font-family: $heading-font;
+  margin: 0;
+}
+
+header {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+p {
+  font-family: sans-serif;
+}
+
+.tabs {
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  padding-right: 40px;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+  margin: 0;
+}
+
+.tabs-nav li {
+  width: 25%;
+  margin: 0;
+}
+
+a {
+  background: #eaeaed;
+  border: 1px solid #cecfd5;
+  color: $primary-text;
+  display: block;
+  letter-spacing: 10px;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff7b29;
+}
+
+.tab-active a {
+  background: $primary-background;
+  color: $primary-text;
+  cursor: default;
+}
+
+.tabs-info {
+  border: 1px solid #cecfd5;
+  clear: both;
+  margin: 0 40px 40px 40px;
+  padding: 40px 100px;
+  position: relative;
+  top: -1px;
 }

@@ -41,3 +41,15 @@ fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServ
 setTimeout(() => console.log('roomServices', roomServices), 1000)
 
 // let hotel = new Hotel(fill in arguments);
+
+$('.tabs-info div').hide();
+$('.tabs-info div:first').show();
+$('.tabs-nav li:first').addClass('tab-active');
+
+$('.tabs-nav a').on('click', function(event){
+  event.preventDefault();
+  $('.tabs-nav li').removeClass('tab-active');
+  $(this).parent().addClass('tab-active');
+  $('.tabs-info div').hide();
+  $($(this).attr('href')).show();
+});
