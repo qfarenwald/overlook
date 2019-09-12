@@ -12,6 +12,7 @@ $primary-background: #FFFFFF;
 $secondary-background: #dce7f7;
 $tertiary-background: grey;
 $primary-text: #000000;
+$hover-text: #af2155;
 
 body {
   background-image: url("/images/bright-colors-daylight-2742812.jpg");
@@ -36,6 +37,11 @@ h1 {
 h2 {
   text-align: center;
   letter-spacing: 10px;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
 }
 
 p {
@@ -70,7 +76,7 @@ a {
 }
 
 a:hover {
-  color: #ff7b29;
+  color: $hover-text;
 }
 
 .tab-active a {
