@@ -30,12 +30,13 @@ class Hotel {
   }
 
   totalRoomsAvailToday(date) {
-
+    let roomsBooked = this.findRoomsBooked(date)
+    return this.rooms.length - roomsBooked.length
   }
 
   totalRevenueToday(date) {
     let roomsBooked = this.findRoomsBooked(date)
-
+    
   }
 
   percentageRoomsOccToday(date) {
