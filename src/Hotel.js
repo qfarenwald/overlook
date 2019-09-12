@@ -34,17 +34,17 @@ class Hotel {
   }
 
   totalRevenueToday(date) {
-
+    let roomsBooked = this.findRoomsBooked(date)
+    
   }
 
   percentageRoomsOccToday(date) {
 
   }
 
-  getCurrentCustomer(id) {
-    //guestrepository
-
-  }
+  // getCurrentCustomer(id) {
+  //   //guestrepository??
+  // }
 
 }
 
