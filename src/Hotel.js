@@ -8,15 +8,6 @@ class Hotel {
     this.bookings = bookingsData;
   }
 
-  getDate() {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0');
-    var yyyy = today.getFullYear();
-    today = `${yyyy}/${mm}/${dd}`;
-    return today;
-  }
-
   findRoomsBooked(date) {
     return this.bookings.filter((booking) => {
       return booking.date === date;

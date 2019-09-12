@@ -1,13 +1,6 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you import jQuery into a JS file if you use jQuery in that file
 import $ from 'jquery';
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
+import domUpdates from './domUpdates';
 import './images/bright-colors-daylight-2742812.jpg'
 
 let users, rooms, bookings, roomServices
@@ -40,7 +33,24 @@ fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServ
 
 setTimeout(() => console.log('roomServices', roomServices), 1000)
 
-// let hotel = new Hotel(fill in arguments);
+function getDate() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0');
+  var yyyy = today.getFullYear();
+  today = `${yyyy}/${mm}/${dd}`;
+  return today;
+}
+
+getDate()
+
+function appendDate() {
+  $('#date').text(getDate());
+}
+
+$(document).ready(() => {
+  appendDate()
+});
 
 $('.tabs-info div').hide();
 $('.tabs-info div:first').show();
