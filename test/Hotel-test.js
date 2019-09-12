@@ -69,8 +69,16 @@ describe('Hotel', () => {
     expect(hotel.totalRoomsAvailToday("2019/09/15")).to.equal(27);
   });
 
+  it('should get total room revenue for today', () => {
+    expect(hotel.totalRoomRevenueToday("2019/09/15")).to.equal();
+  });
+
+  it('should get total rooms serviced revenue for today', () => {
+    expect(hotel.totalRoomServiceRevenueToday("2019/09/15")).to.equal(6.56);
+  });
+
   it('should get total revenue for today', () => {
-    expect(hotel.totalRevenueToday("2019/09/15")).to.equal();
+    expect(hotel.totalRoomServiceRevenueToday("2019/09/15")).to.equal();
   });
 
   it('should get percentage of rooms occupied today', () => {

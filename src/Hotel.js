@@ -34,9 +34,28 @@ class Hotel {
     return this.rooms.length - roomsBooked.length
   }
 
-  totalRevenueToday(date) {
+//WRONG DATA
+  totalRoomRevenueToday(date) {
     let roomsBooked = this.findRoomsBooked(date)
-    
+    // console.log(roomsBooked)
+    return roomsBooked.reduce((num, room) => {
+      num += room.costPerNight
+      // console.log(num)
+      return num
+    }, 0)
+  }
+
+  totalRoomServiceRevenueToday(date) {
+    let roomsServiced = this.findRoomsServiced(date)
+    return roomsServiced.reduce((num, room) => {
+      num += room.totalCost
+      return num
+    }, 0)
+  }
+
+  totalRevenueToday(date) {
+    return this.totalRoomRevenueToday(date) + this.totalRoomServiceRevenueToday(date)
+
   }
 
   percentageRoomsOccToday(date) {
