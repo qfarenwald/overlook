@@ -1,4 +1,5 @@
-// import Class from './Class.js';
+import booking from './Booking.js';
+import roomService from './RoomService.js';
 
 class Hotel {
   constructor(usersData, roomsData, roomsServicesData, bookingsData) {
@@ -8,55 +9,9 @@ class Hotel {
     this.bookings = bookingsData;
   }
 
-  findRoomsBooked(date) {
-    return this.bookings.filter((booking) => {
-      return booking.date === date;
-    })
-  }
-
-  findRoomsServiced(date) {
-    return this.roomServices.filter((room) => {
-      return room.date === date;
-    })
-  }
-
-  totalRoomsAvailToday(date) {
-    let roomsBooked = this.findRoomsBooked(date)
-    return this.rooms.length - roomsBooked.length
-  }
-
-  totalRoomRevenueToday(date) {
-    let roomsBooked = this.findRoomsBooked(date)
-    return roomsBooked.reduce((num, roomBooked) => {
-      this.rooms.forEach((room) => {
-        if (room.number === roomBooked.roomNumber) {
-          return num += room.costPerNight
-        }
-      })
-      return parseFloat(num.toFixed(2))
-    }, 0)
-  }
-
-  totalRoomServiceRevenueToday(date) {
-    let roomsServiced = this.findRoomsServiced(date)
-    return roomsServiced.reduce((num, room) => {
-      num += room.totalCost
-      return num
-    }, 0)
-  }
-
   totalRevenueToday(date) {
-    return this.totalRoomRevenueToday(date) + this.totalRoomServiceRevenueToday(date)
+    return booking.totalRoomRevenueToday(date) + roomService.totalRoomServiceRevenueToday(date)
   }
-
-  percentageRoomsOccToday(date) {
-    let roomsBooked = this.findRoomsBooked(date)
-    return (roomsBooked.length / this.rooms.length) * 100
-  }
-
-  // getCurrentCustomer(id) {
-  //   //guestrepository??
-  // }
 
 }
 
