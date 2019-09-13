@@ -22,9 +22,9 @@ describe('Hotel', () => {
     expect(Hotel).to.be.a('function');
   });
 
-  it('should get todays date', () => {
-    expect(hotel.getDate()).to.equal(hotel.getDate());
-  });
+  // it('should get todays date', () => {
+  //   expect(hotel.getDate()).to.equal(hotel.getDate());
+  // });
 
   it('should find all rooms booked on a certain day', () => {
     expect(hotel.findRoomsBooked("2019/09/15")).to.deep.equal([
