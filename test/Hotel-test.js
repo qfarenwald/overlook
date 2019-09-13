@@ -15,7 +15,7 @@ describe('Hotel', () => {
   let hotel;
 
   beforeEach(() => {
-    hotel = new Hotel(usersData, roomsData, roomsServicesData, bookingsData);
+    hotel = new Hotel(usersData, roomsData, bookingsData, roomsServicesData);
   });
 
   it('should be a function', () => {

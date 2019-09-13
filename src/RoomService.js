@@ -1,11 +1,6 @@
-// import Class from './Class.js';
-
 class RoomService {
-  constructor(usersData, roomsData, roomsServicesData, bookingsData) {
-    this.users = usersData;
-    this.rooms = roomsData;
+  constructor(roomsServicesData) {
     this.roomServices = roomsServicesData;
-    this.bookings = bookingsData;
   }
 
   findRoomsServiced(date) {

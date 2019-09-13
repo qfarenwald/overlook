@@ -1,16 +1,16 @@
-import booking from './Booking.js';
-import roomService from './RoomService.js';
+import User from './User.js';
+import Booking from './Booking.js';
+import RoomService from './RoomService.js';
 
 class Hotel {
-  constructor(usersData, roomsData, roomsServicesData, bookingsData) {
-    this.users = usersData;
-    this.rooms = roomsData;
-    this.roomServices = roomsServicesData;
-    this.bookings = bookingsData;
+  constructor(usersData, roomsData, bookingsData, roomsServicesData) {
+    this.user = new User(usersData);
+    this.booking = new Booking(roomsData, bookingsData);
+    this.roomService = new RoomService(roomsServicesData);
   }
 
   totalRevenueToday(date) {
-    return booking.totalRoomRevenueToday(date) + roomService.totalRoomServiceRevenueToday(date)
+    return this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
   }
 
 }

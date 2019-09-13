@@ -1,10 +1,8 @@
 // import Class from './Class.js';
 
 class Booking {
-  constructor(usersData, roomsData, roomsServicesData, bookingsData) {
-    this.users = usersData;
+  constructor(roomsData, bookingsData) {
     this.rooms = roomsData;
-    this.roomServices = roomsServicesData;
     this.bookings = bookingsData;
   }
 
