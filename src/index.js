@@ -10,28 +10,20 @@ fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users")
 .then(data => users = data.users)
 .catch(err => console.log('users', err));
 
-setTimeout(() => console.log('users', users), 1000)
-
 fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms")
 .then(data => data.json())
 .then(data => rooms = data.rooms)
 .catch(err => console.log(err));
-
-setTimeout(() => console.log('rooms', rooms), 1000)
 
 fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings")
 .then(data => data.json())
 .then(data => bookings = data.bookings)
 .catch(err => console.log(err));
 
-setTimeout(() => console.log('bookings', bookings), 1000)
-
 fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices")
 .then(data => data.json())
 .then(data => roomServices = data.roomServices)
 .catch(err => console.log(err));
-
-setTimeout(() => console.log('roomServices', roomServices), 1000)
 
 function getDate() {
   var today = new Date();
@@ -42,14 +34,13 @@ function getDate() {
   return today;
 }
 
-getDate()
-
 function appendDate() {
   $('#date').text(getDate());
 }
 
 $(document).ready(() => {
   appendDate()
+  domUpdates.appendRoomsAvailToday(getDate());
 });
 
 $('.tabs-info div').hide();
