@@ -29,9 +29,11 @@ const getDate = () => {
   return today;
 };
 
-function appendDate() {
-  $('#date').text(getDate());
-};
+// function appendDate() {
+//   $('#date').text(getDate());
+// };
+
+domUpdates.appendDate(getDate())
 
 $('.tabs-info div').hide();
 $('.tabs-info div:first').show();
