@@ -4,10 +4,8 @@ const expect = chai.expect;
 // chai.use(spies);
 
 import Booking from '../src/Booking.js';
-import bookingsData from '../data/bookings.js';
 import roomsData from '../data/rooms.js';
-import roomsServicesData from '../data/roomServices.js';
-import usersData from '../data/users.js';
+import bookingsData from '../data/bookings.js';
 
 // chai.spy.on(file, ['function1', 'function2'], () => {});
 
@@ -15,7 +13,7 @@ describe('Booking', () => {
   let booking;
 
   beforeEach(() => {
-    booking = new Booking(usersData, roomsData, roomsServicesData, bookingsData);
+    booking = new Booking(roomsData, bookingsData);
   });
 
   it('should be a function', () => {
