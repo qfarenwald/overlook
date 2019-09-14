@@ -18,9 +18,9 @@ Promise.all([
   .catch(err => console.log(err))
 
 const openHotel = (date) => {
-  domUpdates.appendRoomsAvailToday(hotel.booking.totalRoomsAvailToday(date))
-  domUpdates.appendRoomsOccToday(hotel.booking.percentageRoomsOccToday(date))
-  domUpdates.appendTotalRevenueToday(hotel.totalRevenueToday(date))
+  hotel.booking.totalRoomsAvailToday(date)
+  // domUpdates.appendRoomsOccToday(hotel.booking.percentageRoomsOccToday(date))
+  // domUpdates.appendTotalRevenueToday(hotel.totalRevenueToday(date))
 };
 
 const getDate = () => {
@@ -32,7 +32,7 @@ const getDate = () => {
   return today;
 };
 
-domUpdates.appendDate(getDate())
+// domUpdates.appendDate(getDate())
 
 ///////////// move to domUpdates?
 $('.tabs-info div').hide();

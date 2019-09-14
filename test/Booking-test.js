@@ -1,19 +1,24 @@
 import chai from 'chai';
 const expect = chai.expect;
+import spies from 'chai-spies'
 // const spies = require('chai-spies');
-// chai.use(spies);
+chai.use(spies);
 
 import Booking from '../src/Booking.js';
 import roomsData from '../data/rooms.js';
 import bookingsData from '../data/bookings.js';
-
-// chai.spy.on(file, ['function1', 'function2'], () => {});
+import domUpdates from '../src/domUpdates.js'
 
 describe('Booking', () => {
   let booking;
 
   beforeEach(() => {
     booking = new Booking(roomsData, bookingsData);
+    chai.spy.on(domUpdates, ['appendRoomsAvailToday'], () => true);
+  });
+
+  afterEach(() => {
+    chai.spy.restore(domUpdates)
   });
 
   it('should be a function', () => {
@@ -49,7 +54,9 @@ describe('Booking', () => {
   });
 
   it('should get total rooms avail today', () => {
-    expect(booking.totalRoomsAvailToday("2019/09/15")).to.equal(27);
+    // expect(booking.totalRoomsAvailToday("2019/09/15")).to.equal(27);
+    booking.totalRoomsAvailToday('2019/09/15')
+    expect(domUpdates.appendRoomsAvailToday).to.have.been.called(1);
   });
 
   it('should get total room revenue for today', () => {

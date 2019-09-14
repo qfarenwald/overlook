@@ -1,4 +1,4 @@
-// import Class from './Class.js';
+import domUpdates from './domUpdates.js';
 
 class Booking {
   constructor(roomsData, bookingsData) {
@@ -14,7 +14,8 @@ class Booking {
 
   totalRoomsAvailToday(date) {
     let roomsBooked = this.findRoomsBooked(date)
-    return this.rooms.length - roomsBooked.length
+    domUpdates.appendRoomsAvailToday(this.rooms.length - roomsBooked.length)
+    // return this.rooms.length - roomsBooked.length
   }
 
   totalRoomRevenueToday(date) {
