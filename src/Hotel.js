@@ -1,7 +1,7 @@
 import User from './User.js';
 import Booking from './Booking.js';
 import RoomService from './RoomService.js';
-import domUpdates from './domUpdates';
+import domUpdates from './domUpdates.js';
 
 class Hotel {
   constructor(usersData, roomsData, bookingsData, roomsServicesData) {
@@ -11,6 +11,7 @@ class Hotel {
   }
 
   totalRevenueToday(date) {
+    domUpdates.appendTotalRevenueToday(this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date))
     return this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
   }
 

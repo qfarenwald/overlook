@@ -21,7 +21,7 @@ Promise.all([
 const openHotel = (date) => {
   hotel.booking.totalRoomsAvailToday(date)
   hotel.booking.percentageRoomsOccToday(date)
-  // domUpdates.appendTotalRevenueToday(hotel.totalRevenueToday(date))
+  hotel.totalRevenueToday(date)
 };
 
 const getDate = () => {

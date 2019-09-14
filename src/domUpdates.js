@@ -10,11 +10,11 @@ const domUpdates = {
 
   appendRoomsOccToday(totalRooms) {
     $('#rooms-occ-today').text(totalRooms);
-  }
+  },
 
-  // appendTotalRevenueToday(totalRevenue) {
-  //   $('#revenue-today').text(totalRevenue);
-  // },
+  appendTotalRevenueToday(totalRevenue) {
+    $('#revenue-today').text(totalRevenue);
+  }
   //
   // appendDate(date) {
   //   $('#date').text(date);

@@ -1,7 +1,6 @@
 import chai from 'chai';
 const expect = chai.expect;
 import spies from 'chai-spies'
-// const spies = require('chai-spies');
 chai.use(spies);
 
 import Booking from '../src/Booking.js';
