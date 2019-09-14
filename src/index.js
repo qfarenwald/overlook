@@ -33,7 +33,7 @@ const getDate = () => {
   return today;
 };
 
-// domUpdates.appendDate(getDate())
+domUpdates.appendDate(getDate())
 
 ///////////// move to domUpdates?
 $('.tabs-info div').hide();

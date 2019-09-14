@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-// import './css/base.scss';
-
 const domUpdates = {
 
   appendRoomsAvailToday(totalRooms) {
@@ -14,11 +12,11 @@ const domUpdates = {
 
   appendTotalRevenueToday(totalRevenue) {
     $('#revenue-today').text(totalRevenue);
+  },
+
+  appendDate(date) {
+    $('#date').text(date);
   }
-  //
-  // appendDate(date) {
-  //   $('#date').text(date);
-  // }
 
 };
 
