@@ -14,11 +14,6 @@ class Hotel {
     return this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
   }
 
-  openHotel(date) {
-    domUpdates.appendRoomsAvailToday(this.booking.totalRoomsAvailToday(date))
-    domUpdates.appendTotalRevenueToday(this.totalRevenueToday(date))
-  }
-
 }
 
 export default Hotel;
