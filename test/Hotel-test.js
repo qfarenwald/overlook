@@ -26,4 +26,9 @@ describe('Hotel', () => {
     expect(hotel.totalRevenueToday("2019/09/15")).to.equal(7397.04);
   });
 
+  // spices
+  // it('should open hotel', () => {
+  //   expect(hotel.openHotel("2019/09/15")).to.equal(7397.04);
+  // });
+
 });
