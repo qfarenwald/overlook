@@ -8,6 +8,10 @@ export default {
     $('#rooms-avail-today').text(totalRooms);
   },
 
+  appendRoomsOccToday(totalRooms) {
+    $('#rooms-occ-today').text(totalRooms);
+  },
+
   appendTotalRevenueToday(totalRevenue) {
     $('#revenue-today').text(totalRevenue);
   },
