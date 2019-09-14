@@ -36,6 +36,24 @@ class Booking {
     return (roomsBooked.length / this.rooms.length) * 100
   }
 
+  getPopularityOfDates() {
+    return this.bookings.reduce((obj, booking) => {
+        if(!obj[booking.date]){
+          obj[booking.date] = 0
+        }
+        obj[booking.date]++
+      return obj
+    }, {})
+  }
+
+  sortPopularityOfDates() {
+    let popDates = this.getPopularityOfDates();
+    let popDatesKeys = Object.keys(popDates);
+    return popDatesKeys.sort((a, b) => {
+      return popDatesKeys[a] - popDatesKeys[b]
+    })
+  }
+
 }
 
 export default Booking;
