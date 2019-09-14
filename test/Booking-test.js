@@ -14,7 +14,7 @@ describe('Booking', () => {
 
   beforeEach(() => {
     booking = new Booking(roomsData, bookingsData);
-    chai.spy.on(domUpdates, ['appendRoomsAvailToday'], () => true);
+    chai.spy.on(domUpdates, ['appendRoomsAvailToday', 'appendRoomsOccToday'], () => true);
   });
 
   afterEach(() => {
@@ -54,8 +54,7 @@ describe('Booking', () => {
   });
 
   it('should get total rooms avail today', () => {
-    // expect(booking.totalRoomsAvailToday("2019/09/15")).to.equal(27);
-    booking.totalRoomsAvailToday('2019/09/15')
+    expect(booking.totalRoomsAvailToday("2019/09/15")).to.equal(27);
     expect(domUpdates.appendRoomsAvailToday).to.have.been.called(1);
   });
 
@@ -65,6 +64,7 @@ describe('Booking', () => {
 
   it('should get percentage of rooms occupied today', () => {
     expect(booking.percentageRoomsOccToday("2019/09/15")).to.equal(46);
+    expect(domUpdates.appendRoomsOccToday).to.have.been.called(1);
   });
 
 });

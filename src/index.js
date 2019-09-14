@@ -15,11 +15,12 @@ Promise.all([
   fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices').then(response => response.json()),
 ]).then(data => hotel = new Hotel(data[0].users, data[1].rooms, data[2].bookings, data[3].roomServices))
   .then(data => openHotel(getDate()))
+  .then(data => console.log(hotel))
   .catch(err => console.log(err))
 
 const openHotel = (date) => {
   hotel.booking.totalRoomsAvailToday(date)
-  // domUpdates.appendRoomsOccToday(hotel.booking.percentageRoomsOccToday(date))
+  hotel.booking.percentageRoomsOccToday(date)
   // domUpdates.appendTotalRevenueToday(hotel.totalRevenueToday(date))
 };
 

@@ -15,7 +15,7 @@ class Booking {
   totalRoomsAvailToday(date) {
     let roomsBooked = this.findRoomsBooked(date)
     domUpdates.appendRoomsAvailToday(this.rooms.length - roomsBooked.length)
-    // return this.rooms.length - roomsBooked.length
+    return this.rooms.length - roomsBooked.length
   }
 
   totalRoomRevenueToday(date) {
@@ -32,6 +32,7 @@ class Booking {
 
   percentageRoomsOccToday(date) {
     let roomsBooked = this.findRoomsBooked(date)
+    domUpdates.appendRoomsOccToday((roomsBooked.length / this.rooms.length) * 100)
     return (roomsBooked.length / this.rooms.length) * 100
   }
 
