@@ -48,18 +48,23 @@ class Booking {
 
   sortPopularityOfDates() {
     let popDates = this.getPopularityOfDates();
-    let popDatesKeys = Object.keys(popDates);
-    return popDatesKeys.sort((a, b) => {
-      return popDatesKeys[a] - popDatesKeys[b]
+    let popDatesValues = Object.values(popDates);
+    return popDatesValues.sort((a, b) => {
+      return b - a
     })
   }
 
   getMostPopDates() {
+    let popDates = this.getPopularityOfDates();
     let sortPopDates = this.sortPopularityOfDates()
-    return sortPopDates[0]
+    let popDatesKeys = Object.keys(popDates)
+    return popDatesKeys.filter((date) => {
+      return popDates[date] === sortPopDates[0]
+    })
   }
 
   getLeastPopDates() {
+    let popDates = this.getPopularityOfDates();
     let sortLeastDates = this.sortPopularityOfDates()
     return sortLeastDates[sortLeastDates.length - 1]
   }
