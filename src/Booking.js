@@ -54,6 +54,16 @@ class Booking {
     })
   }
 
+  getMostPopDates() {
+    let sortPopDates = this.sortPopularityOfDates()
+    return sortPopDates[0]
+  }
+
+  getLeastPopDates() {
+    let sortLeastDates = this.sortPopularityOfDates()
+    return sortLeastDates[sortLeastDates.length - 1]
+  }
+
 }
 
 export default Booking;

@@ -170,12 +170,18 @@ describe('Booking', () => {
       '2019/08/15': 16,
       '2019/08/10': 22
     });
-    // expect(domUpdates.appendRoomsOccToday).to.have.been.called(1);
   });
 
   it('should sort booking dates by popularity', () => {
     expect(booking.sortPopularityOfDates().length).to.equal(101);
-    // expect(domUpdates.appendRoomsOccToday).to.have.been.called(1);
+  });
+
+  it('should get most pop date', () => {
+    expect(booking.getMostPopDates()).to.equal('2019/10/19');
+  });
+
+  it('should get least pop date', () => {
+    expect(booking.getLeastPopDates()).to.equal('2019/08/10');
   });
 
 });
