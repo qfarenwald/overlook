@@ -10,17 +10,17 @@
     </header>
     <main class="tabs">
       <ul class="tabs-nav">
-        <li><a href="#tab-main">MAIN</a></li>
-        <li><a href="#tab-customer">CUSTOMER</a></li>
-        <li><a href="#tab-rooms">ROOMS</a></li>
-        <li><a href="#tab-orders">ORDERS</a></li>
+        <li class="tabs-li"><a href="#tab-main">MAIN</a></li>
+        <li class="tabs-li"><a href="#tab-customer">CUSTOMER</a></li>
+        <li class="tabs-li"><a href="#tab-rooms">ROOMS</a></li>
+        <li class="tabs-li"><a href="#tab-orders">ORDERS</a></li>
       </ul>
       <section class="tabs-info">
         <div class="tab" id="tab-main">
           <section class="default-info">
-            <p>Rooms Available: <span id="rooms-avail-today">0</span></p>
-            <p>Rooms Occupied: <span id="rooms-occ-today">0</span>%</p>
-            <p>Total Revenue: $<span id="revenue-today">0</span></p>
+            <p>Rooms Available: <span id="rooms-avail-today"></span></p>
+            <p>Rooms Occupied: <span id="rooms-occ-today"></span></p>
+            <p>Total Revenue: <span id="revenue-today"></span></p>
           </section>
           <section class="defaul-info">
             <p>NO CUSTOMER SELECTED</p>
@@ -42,8 +42,8 @@
         </div>
         <div class="tab" id="tab-rooms">
           <section class="default-info">
-            <p>Most Rooms Booked: <span id="most-pop">0</span></p>
-            <p>Most Rooms Available: <span id="least-pop">0</span></p>
+            <p>Most Rooms Booked: <span id="most-pop"></span></p>
+            <p>Most Rooms Available: <span id="least-pop"></span></p>
             <input type="text" placeholder="SEARCH FOR ROOMS AVAILABLE FOR A SPECIFIC DATE">
             <button type="button">FIND ROOMS</button>
           </section>
@@ -53,7 +53,7 @@
         </div>
         <div class="tab" id="tab-orders">
           <section class="default-info">
-            <p>Room Service Orders: <span id="service-orders">0</span></p>
+            <p>Room Service Orders: <span id="service-orders"></span></p>
             <input type="text" placeholder="SEARCH FOR ALL ROOM SERVICE ORDERS FOR A SPECIFIC DATE">
             <button type="button">FIND ROOMSERVICE</button>
           </section>

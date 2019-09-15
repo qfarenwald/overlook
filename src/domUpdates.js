@@ -7,27 +7,27 @@ const domUpdates = {
   },
 
   appendRoomsAvailToday(totalRooms) {
-    $('#rooms-avail-today').text(totalRooms);
+    $('#rooms-avail-today').append(`<p>${totalRooms}</p>`);
   },
 
   appendRoomsOccToday(totalRooms) {
-    $('#rooms-occ-today').text(totalRooms);
+    $('#rooms-occ-today').append(`<p>${totalRooms}%</p>`);
   },
 
   appendTotalRevenueToday(totalRevenue) {
-    $('#revenue-today').text(totalRevenue);
+    $('#revenue-today').append(`<p>$${totalRevenue}</p>`);
   },
 
   appendMostPopDate(popularDates) {
-    $('#most-pop').text(popularDates);
+    $('#most-pop').append(`<p>${popularDates}</p>`);
   },
 
   appendLeastPopDate(popularDates) {
-    $('#least-pop').text(popularDates);
+    $('#least-pop').append(`<p>${popularDates}</p>`);
   },
 
-  appendRoomServiceOrders(date) {
-    $('#service-orders').text(date);
+  appendRoomServiceOrders(order) {
+    $('#service-orders').append(`<p>${order}</p>`);
   }
 
 };
