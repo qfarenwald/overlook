@@ -12,7 +12,7 @@ class RoomService {
     roomServiceOrders.forEach((order) => {
       domUpdates.appendRoomServiceOrders(`Customer ID: ${order.userID}`)
       domUpdates.appendRoomServiceOrders(`Food Item: ${order.food}`)
-      domUpdates.appendRoomServiceOrders(`Total Cost: $${order.totalCost}`)
+      domUpdates.appendRoomServiceOrders(`Cost: $${order.totalCost}`)
     })
     return roomServiceOrders
   }
@@ -26,10 +26,17 @@ class RoomService {
   }
 
   getAllRoomServiceForCustomer(id) {
-    return this.roomServices.filter((service) => {
+    let roomServices = this.roomServices.filter((service) => {
       return service.userID === parseInt(id)
     })
-  }
+    roomServices.forEach((order) => {
+      domUpdates.appendCustomerOrders(`Date: ${order.date}`)
+      domUpdates.appendCustomerOrders(`Food Item: ${order.food}`)
+      domUpdates.appendCustomerOrders(`Cost: ${order.totalCost}`)
+  })
+    return roomServices
+}
+
 
   getTotalRoomServiceCostForCustomer(id) {
     let allCustomerRoomService = this.getAllRoomServiceForCustomer(id)

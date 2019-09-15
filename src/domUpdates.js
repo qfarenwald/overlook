@@ -36,7 +36,15 @@ const domUpdates = {
 
   appendCustomerName(name) {
     $('.customer-name-place').text(name)
-  }
+  },
+
+  appendCustomerOrders(order) {
+    $('#customer-all-orders').append(`<p>${order}</p>`);
+  },
+
+  // appendCustomerOrdersTotalCost(cost) {
+  //   $('#customer-all-orders-cost').append(`<p>${cost}</p>`);
+  // }
 
 };
 
