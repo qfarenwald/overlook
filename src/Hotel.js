@@ -11,8 +11,9 @@ class Hotel {
   }
 
   totalRevenueToday(date) {
-    domUpdates.appendTotalRevenueToday(this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date))
-    return this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
+    let revenueToday = this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
+    domUpdates.appendTotalRevenueToday(revenueToday)
+    return revenueToday
   }
 
 }

@@ -38,7 +38,6 @@ const getDate = () => {
 
 domUpdates.appendDate(getDate())
 
-///////////// move to domUpdates?
 $('.tabs-info div').hide();
 $('.tabs-info div:first').show();
 $('.tabs-nav li:first').addClass('tab-active');
