@@ -16,6 +16,13 @@ class RoomService {
       return num
     }, 0)
   }
+
+  getRoomServiceOrdersToday(date) {
+    return this.roomServices.filter((service) => {
+      return service.date === date
+    })
+  }
+
 }
 
 export default RoomService;
