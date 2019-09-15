@@ -116,6 +116,10 @@ input {
 button {
   background-color: lighten($hover, 10);
   color: $primary-background;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
   padding: 10px;
   width: 200px;
   &:hover {
