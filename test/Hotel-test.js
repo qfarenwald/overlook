@@ -15,7 +15,7 @@ describe('Hotel', () => {
 
   beforeEach(() => {
     hotel = new Hotel(usersData, roomsData, bookingsData, roomsServicesData);
-    chai.spy.on(domUpdates, ['appendTotalRevenueToday', 'appendRoomServiceOrders'], () => true);
+    chai.spy.on(domUpdates, ['appendTotalRevenueToday', 'appendRoomServiceOrders', 'appendCustomerDropdown'], () => true);
   });
 
   afterEach(() => {
@@ -31,5 +31,10 @@ describe('Hotel', () => {
       expect(domUpdates.appendTotalRevenueToday).to.have.been.called(1);
       expect(domUpdates.appendRoomServiceOrders).to.have.been.called(3);
   });
+
+  it('should display list of customers', () => {
+    expect(hotel.displayCustomers().length).to.equal(100);
+    expect(domUpdates.appendCustomerDropdown).to.have.been.called(100);
+  })
 
 });

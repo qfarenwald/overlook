@@ -16,6 +16,13 @@ class Hotel {
     return revenueToday
   }
 
+  displayCustomers() {
+    this.user.users.forEach((user) => {
+    domUpdates.appendCustomerDropdown(user.id, user.name)
+    })
+    return this.user.users
+  }
+
 }
 
 export default Hotel;

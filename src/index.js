@@ -25,6 +25,7 @@ const openHotel = (date) => {
   hotel.booking.getMostPopDates()
   hotel.booking.getLeastPopDates()
   hotel.roomService.getRoomServiceOrdersToday(date)
+  hotel.displayCustomers()
 };
 
 const getDate = () => {

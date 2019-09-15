@@ -28,6 +28,10 @@ const domUpdates = {
 
   appendRoomServiceOrders(order) {
     $('#service-orders').append(`<p>${order}</p>`);
+  },
+
+  appendCustomerDropdown(id, name) {
+    $('#name-option').append(`<option value="${id}" id="${id}-option">${name}</option>`);
   }
 
 };
