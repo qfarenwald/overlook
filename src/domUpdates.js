@@ -20,6 +20,10 @@ const domUpdates = {
 
   appendMostPopDate(popularDates) {
     $('#most-pop').text(popularDates);
+  },
+
+  appendLeastPopDate(popularDates) {
+    $('#least-pop').text(popularDates);
   }
 
 };

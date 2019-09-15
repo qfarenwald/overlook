@@ -23,6 +23,7 @@ const openHotel = (date) => {
   hotel.booking.percentageRoomsOccToday(date)
   hotel.totalRevenueToday(date)
   hotel.booking.getMostPopDates()
+  hotel.booking.getLeastPopDates()
 };
 
 const getDate = () => {
