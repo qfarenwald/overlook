@@ -18,47 +18,57 @@
       <section class="tabs-info">
         <div class="tab" id="tab-main">
           <section class="default-info">
-            <p>Rooms Available: <span id="rooms-avail-today"></span></p>
-            <p>Rooms Occupied: <span id="rooms-occ-today"></span></p>
-            <p>Total Revenue: <span id="revenue-today"></span></p>
+            <h3>TODAY IN REVIEW</h3>
+            <h4>ROOMS AVAILABLE<span id="rooms-avail-today"></span></h4>
+            <h4>ROOMS OCCUPIED<span id="rooms-occ-today"></span></h4>
+            <h4>TOTAL REVENUE<span id="revenue-today"></span></h4>
           </section>
-          <section class="defaul-info">
-            <p>NO CUSTOMER SELECTED</p>
-            <p>- customer name (when selected)</p>
+          <section class="customer-info">
+            <h3>CUSTOMER</h3>
+            <h4>NO CUSTOMER SELECTED<span id="user-name"></span></h4>
           </section>
         </div>
         <div class="tab" id="tab-customer">
           <section class="default-info">
-            <input type="text" placeholder="SEARCH FOR A CURRENT CUSTOMER">
+            <h3>CUSTOMER SEARCH</h3>
+            <input type="text" placeholder="ENTER EXISTING CUSTOMER NAME">
+            <br>
             <button type="button">SEARCH</button>
-            <p>- finding that customer will give me the option to select that customer</p>
+            <br>
             <input type="text" placeholder="ENTER NEW CUSTOMER NAME">
+            <br>
             <button type="button">CREATE NEW CUSTOMER</button>
-            <p>- Have to submit the customer's name and this customer will automatically be selected</p>
           </section>
-          <section class="defaul-info">
-            <p>NO CUSTOMER SELECTED</p>
+          <section class="customer-info">
+            <h3>CUSTOMER</h3>
+            <h4>NO CUSTOMER SELECTED<span id="user-name"></span></h4>
           </section>
         </div>
         <div class="tab" id="tab-rooms">
           <section class="default-info">
-            <p>Most Rooms Booked: <span id="most-pop"></span></p>
-            <p>Most Rooms Available: <span id="least-pop"></span></p>
-            <input type="text" placeholder="SEARCH FOR ROOMS AVAILABLE FOR A SPECIFIC DATE">
+            <h3>ROOMS IN REVIEW</h3>
+            <h4>MOST ROOMS BOOKED<span id="most-pop"></span></h4>
+            <h4>MOST ROOMS AVAILABLE<span id="least-pop"></span></h4>
+            <input type="text" placeholder="SEARCH FOR ROOMS BY DATE">
+            <br>
             <button type="button">FIND ROOMS</button>
           </section>
-          <section class="defaul-info">
-            <p>NO CUSTOMER SELECTED</p>
+          <section class="customer-info">
+            <h3>CUSTOMER</h3>
+            <h4>NO CUSTOMER SELECTED<span id="user-name"></span></h4>
           </section>
         </div>
         <div class="tab" id="tab-orders">
           <section class="default-info">
-            <p>Room Service Orders: <span id="service-orders"></span></p>
-            <input type="text" placeholder="SEARCH FOR ALL ROOM SERVICE ORDERS FOR A SPECIFIC DATE">
+            <h3>ORDERS FOR TODAY</h3>
+            <h4>ROOM SERVICE ORDERS<span id="service-orders"></span></h4>
+            <input type="text" placeholder="SEARCH FOR ORDERS BY DATE">
+            <br>
             <button type="button">FIND ROOMSERVICE</button>
           </section>
-          <section class="defaul-info">
-            <p>NO CUSTOMER SELECTED</p>
+          <section class="customer-info">
+            <h3>CUSTOMER</h3>
+            <h4>NO CUSTOMER SELECTED<span id="user-name"></span></h4>
           </section>
         </div>
       </section>
