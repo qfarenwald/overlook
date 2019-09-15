@@ -50,3 +50,12 @@ $('.tabs-nav a').on('click', function(event){
   $('.tabs-info div').hide();
   $($(this).attr('href')).show();
 });
+
+$('#select-customer-button').on('click', function(event){
+  let id = $('#name-option').val()
+  let selectedUser = hotel.user.users.find((user) => {
+    return user.id === parseInt(id)
+  })
+  let name = selectedUser.name
+  domUpdates.appendCustomerName(name)
+});

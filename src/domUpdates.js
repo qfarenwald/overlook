@@ -32,6 +32,10 @@ const domUpdates = {
 
   appendCustomerDropdown(id, name) {
     $('#name-option').append(`<option value="${id}" id="${id}-option">${id} ${name}</option>`);
+  },
+
+  appendCustomerName(name) {
+    $('.customer-name-place').text(name)
   }
 
 };
