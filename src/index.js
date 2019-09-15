@@ -59,3 +59,11 @@ $('#select-customer-button').on('click', function(event){
   let name = selectedUser.name
   domUpdates.appendCustomerName(name)
 });
+
+$('#new-customer-button').prop('disabled', true)
+
+$('#new-customer-input').keyup((e) => {
+  if ($('#new-customer-input').val() !== '') {
+    $('#new-customer-button').prop('disabled', false);
+  }
+});
