@@ -24,6 +24,10 @@ const domUpdates = {
 
   appendLeastPopDate(popularDates) {
     $('#least-pop').text(popularDates);
+  },
+
+  appendRoomServiceOrders(date) {
+    $('#service-orders').text(date);
   }
 
 };

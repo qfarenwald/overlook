@@ -1,18 +1,22 @@
 import chai from 'chai';
 const expect = chai.expect;
-// const spies = require('chai-spies');
-// chai.use(spies);
+import spies from 'chai-spies'
+chai.use(spies);
 
 import RoomService from '../src/RoomService.js';
 import roomsServicesData from '../data/roomServices.js';
-
-// chai.spy.on(file, ['function1', 'function2'], () => {});
+import domUpdates from '../src/domUpdates.js'
 
 describe('RoomService', () => {
   let roomService;
 
   beforeEach(() => {
     roomService = new RoomService(roomsServicesData);
+    chai.spy.on(domUpdates, ['appendRoomServiceOrders'], () => true);
+  });
+
+  afterEach(() => {
+    chai.spy.restore(domUpdates)
   });
 
   it('should be a function', () => {
@@ -43,6 +47,7 @@ describe('RoomService', () => {
         "userID": 90
       }
     ]);
+    expect(domUpdates.appendRoomServiceOrders).to.have.been.called(1);
   });
 
 });
