@@ -24,6 +24,12 @@ class Hotel {
     return allUsers
   }
 
+  selectCustomer(id) {
+    return this.user.users.find((user) => {
+      return user.id === parseInt(id)
+    })
+  }
+
 }
 
 export default Hotel;

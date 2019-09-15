@@ -37,4 +37,11 @@ describe('Hotel', () => {
     expect(domUpdates.appendCustomerDropdown).to.have.been.called(100);
   })
 
+  it('should display select a customer', () => {
+    expect(hotel.selectCustomer(1)).to.deep.equal({
+      "id": 1,
+      "name": "Matilde Larson"
+      });
+  })
+
 });

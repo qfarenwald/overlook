@@ -53,9 +53,7 @@ $('.tabs-nav a').on('click', function(event){
 
 $('#select-customer-button').on('click', function(event){
   let id = $('#name-option').val()
-  let selectedUser = hotel.user.users.find((user) => {
-    return user.id === parseInt(id)
-  })
+  let selectedUser = hotel.selectCustomer(id)
   let name = selectedUser.name
   domUpdates.appendCustomerName(name)
 });
