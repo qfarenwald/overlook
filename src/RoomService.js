@@ -24,7 +24,6 @@ class RoomService {
       return service.date === date
     })
     roomServiceOrders.forEach((order) => {
-      console.log('order', order)
       domUpdates.appendRoomServiceOrders(`Customer ID: ${order.userID}`)
       domUpdates.appendRoomServiceOrders(`Food Item: ${order.food}`)
       domUpdates.appendRoomServiceOrders(`Total Cost: $${order.totalCost}`)

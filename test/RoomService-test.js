@@ -47,7 +47,7 @@ describe('RoomService', () => {
         "userID": 90
       }
     ]);
-    expect(domUpdates.appendRoomServiceOrders).to.have.been.called(1);
+    expect(domUpdates.appendRoomServiceOrders).to.have.been.called(3);
   });
 
 });

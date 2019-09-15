@@ -60,7 +60,7 @@ class Booking {
     let popDatesKeys = Object.keys(popDates)
     let mostPopularDates = popDatesKeys.filter((date) => {
       return popDates[date] === sortPopDates[0]
-    })
+    }).sort()
     mostPopularDates.forEach((date) => {
       domUpdates.appendMostPopDate(date)
     })
@@ -73,7 +73,7 @@ class Booking {
     let popDatesKeys = Object.keys(popDates)
     let leastPopularDates = popDatesKeys.filter((date) => {
       return popDates[date] === sortPopDates[sortPopDates.length - 1]
-    })
+    }).sort()
     domUpdates.appendLeastPopDate(leastPopularDates)
     return leastPopularDates
   }

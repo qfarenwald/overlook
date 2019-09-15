@@ -177,8 +177,8 @@ describe('Booking', () => {
   });
 
   it('should get most pop date', () => {
-    expect(booking.getMostPopDates()).to.deep.equal(['2019/10/28', '2019/09/07', '2019/10/23']);
-    expect(domUpdates.appendMostPopDate).to.have.been.called(1);
+    expect(booking.getMostPopDates()).to.deep.equal(['2019/09/07', '2019/10/23', '2019/10/28']);
+    expect(domUpdates.appendMostPopDate).to.have.been.called(3);
   });
 
   it('should get least pop date', () => {
