@@ -17,10 +17,11 @@ class Hotel {
   }
 
   displayCustomers() {
-    this.user.users.forEach((user) => {
+    let allUsers = this.user.users
+    allUsers.forEach((user) => {
     domUpdates.appendCustomerDropdown(user.id, user.name)
     })
-    return this.user.users
+    return allUsers
   }
 
 }

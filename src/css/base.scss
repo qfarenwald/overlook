@@ -131,3 +131,11 @@ button {
     background-color: $primary-background;
   }
 }
+
+select {
+  font-size: 16px;
+  margin: 20px 0px;
+  width: 50%;
+  max-width: 400px;
+  padding: 10px;
+}
