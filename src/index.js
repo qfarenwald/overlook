@@ -51,11 +51,14 @@ $('.tabs-nav a').on('click', function(event){
   $($(this).attr('href')).show();
 });
 
+// hide customer orders and room info
+
 $('#select-customer-button').on('click', function(event){
   let id = $('#name-option').val()
   let selectedUser = hotel.selectCustomer(id)
   let name = selectedUser.name
   domUpdates.appendCustomerName(name)
+  // add in here all the other info customer info that is hidden and have it appear on click
 });
 
 $('#new-customer-button').prop('disabled', true)
