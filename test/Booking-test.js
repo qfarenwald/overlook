@@ -13,7 +13,7 @@ describe('Booking', () => {
 
   beforeEach(() => {
     booking = new Booking(roomsData, bookingsData);
-    chai.spy.on(domUpdates, ['appendRoomsAvailToday', 'appendRoomsOccToday'], () => true);
+    chai.spy.on(domUpdates, ['appendRoomsAvailToday', 'appendRoomsOccToday', 'appendMostPopDate'], () => true);
   });
 
   afterEach(() => {
@@ -178,6 +178,7 @@ describe('Booking', () => {
 
   it('should get most pop date', () => {
     expect(booking.getMostPopDates()).to.deep.equal(['2019/10/28', '2019/09/07', '2019/10/23']);
+    expect(domUpdates.appendMostPopDate).to.have.been.called(1);
   });
 
   it('should get least pop date', () => {

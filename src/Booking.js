@@ -58,9 +58,11 @@ class Booking {
     let popDates = this.getPopularityOfDates();
     let sortPopDates = this.sortPopularityOfDates()
     let popDatesKeys = Object.keys(popDates)
-    return popDatesKeys.filter((date) => {
+    let mostPopularDates = popDatesKeys.filter((date) => {
       return popDates[date] === sortPopDates[0]
     })
+    domUpdates.appendMostPopDate(mostPopularDates)
+    return mostPopularDates
   }
 
   getLeastPopDates() {

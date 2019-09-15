@@ -2,6 +2,10 @@ import $ from 'jquery';
 
 const domUpdates = {
 
+  appendDate(date) {
+    $('#date').text(date);
+  },
+
   appendRoomsAvailToday(totalRooms) {
     $('#rooms-avail-today').text(totalRooms);
   },
@@ -14,8 +18,8 @@ const domUpdates = {
     $('#revenue-today').text(totalRevenue);
   },
 
-  appendDate(date) {
-    $('#date').text(date);
+  appendMostPopDate(popularDates) {
+    $('#most-pop').text(popularDates);
   }
 
 };
