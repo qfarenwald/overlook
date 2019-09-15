@@ -10,8 +10,9 @@ $heading-font: 'Playfair Display';
 
 $primary-background: rgba(#FFFFFF, .5);
 $secondary-background: #dce7f7;
-$tertiary-background: grey;
+$tertiary: grey;
 $primary-text: #000000;
+$secondary-text: #FFFFFF;
 $hover: #af2155;
 
 body {
@@ -59,7 +60,8 @@ h4 {
 }
 
 p {
-  color: grey;
+  color: $tertiary;
+  letter-spacing: 1px;
   font-family: sans-serif;
   font-weight: normal;
 }
@@ -78,7 +80,7 @@ ul {
 }
 
 a {
-  border: 1px solid $tertiary-background;
+  border: 1px solid $tertiary;
   color: $primary-text;
   display: block;
   letter-spacing: 5px;
@@ -99,7 +101,7 @@ a {
 
 .tabs-info {
   background-color: $primary-background;
-  border: 1px solid $tertiary-background;
+  border: 1px solid $tertiary;
   clear: both;
   margin: 0 40px 40px 40px;
   padding: 40px 80px;
@@ -114,33 +116,35 @@ a {
 }
 
 input {
+  font-size: 16px;
+  letter-spacing: 1px;
   margin: 20px 0px;
   max-width: 400px;
-  font-size: 16px;
-  width: 100%;
   padding: 10px;
+  width: 100%;
 }
 
 button {
   background-color: lighten($hover, 10);
-  color: $primary-background;
+  color: $secondary-text;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding: 10px 20px;
   &:hover {
     background-color: $hover;
   }
   &:disabled {
-    background-color: $primary-background;
+    background-color: $secondary-text;
   }
 }
 
 select {
   font-size: 16px;
+  letter-spacing: 1px;
   margin: 20px 0px;
-  width: 50%;
   max-width: 400px;
+  width: 210;
   padding: 10px;
 }
