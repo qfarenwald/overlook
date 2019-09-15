@@ -35,9 +35,19 @@ describe('RoomService', () => {
     expect(domUpdates.appendRoomServiceOrders).to.have.been.called(3);
   });
 
-  it('should get total rooms serviced revenue for today', () => {
-    expect(roomService.totalRoomServiceRevenueToday("2019/09/15")).to.equal(6.56);
+  it('should get all room service orders for customer', () => {
+    expect(roomService.getAllRoomServiceForCustomer(1)).to.deep.equal([
+      {
+      "date": "2019/09/28",
+      "food": "Refined Rubber Sandwich",
+      "totalCost": 9.89,
+      "userID": 1
+      }
+    ]);
   });
 
+  it('should get total all time room service cost for customer', () => {
+    expect(roomService.getTotalRoomServiceCostForCustomer(1)).to.equal(9.89);
+  });
 
 });

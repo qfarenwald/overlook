@@ -25,6 +25,20 @@ class RoomService {
     }, 0)
   }
 
+  getAllRoomServiceForCustomer(id) {
+    return this.roomServices.filter((service) => {
+      return service.userID === parseInt(id)
+    })
+  }
+
+  getTotalRoomServiceCostForCustomer(id) {
+    let allCustomerRoomService = this.getAllRoomServiceForCustomer(id)
+    return allCustomerRoomService.reduce((num, service) => {
+      num += service.totalCost
+      return num
+    }, 0)
+  }
+
 }
 
 export default RoomService;
