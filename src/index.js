@@ -67,5 +67,7 @@ $('#new-customer-button').prop('disabled', true)
 $('#new-customer-input').keyup((e) => {
   if ($('#new-customer-input').val() !== '') {
     $('#new-customer-button').prop('disabled', false);
+  } else {
+    $('#new-customer-button').prop('disabled', true)
   }
 });
