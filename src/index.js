@@ -27,13 +27,16 @@ const openHotel = (date) => {
   hotel.roomService.getRoomServiceOrdersToday(date)
   hotel.displayCustomers()
 
+  $('.customer-info').hide();
+
   $('#select-customer-button').on('click', function(event){
-    let id = $('#name-option').val()
-    let selectedUser = hotel.selectCustomer(id)
-    let name = selectedUser.name
-    hotel.roomService.getAllRoomServiceForCustomer(id)
-    hotel.roomService.getTotalRoomServiceCostForCustomer(id)
-    domUpdates.appendCustomerName(name)
+    $('.customer-info').show();
+    let id = $('#name-option').val();
+    let selectedUser = hotel.selectCustomer(id);
+    let name = selectedUser.name;
+    hotel.roomService.getAllRoomServiceForCustomer(id);
+    hotel.roomService.getTotalRoomServiceCostForCustomer(id);
+    domUpdates.appendCustomerName(name);
   });
 };
 
