@@ -31,10 +31,9 @@ const openHotel = (date) => {
     let id = $('#name-option').val()
     let selectedUser = hotel.selectCustomer(id)
     let name = selectedUser.name
-    let selectedUserOrders = hotel.roomService.getAllRoomServiceForCustomer(id)
+    hotel.roomService.getAllRoomServiceForCustomer(id)
+    hotel.roomService.getTotalRoomServiceCostForCustomer(id)
     domUpdates.appendCustomerName(name)
-    domUpdates.appendCustomerOrders(selectedUserOrders)
-    // domUpdates.appendCustomerOrdersTotalCost(cost)
   });
 };
 

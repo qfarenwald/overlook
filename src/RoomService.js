@@ -40,10 +40,12 @@ class RoomService {
 
   getTotalRoomServiceCostForCustomer(id) {
     let allCustomerRoomService = this.getAllRoomServiceForCustomer(id)
-    return allCustomerRoomService.reduce((num, service) => {
+    let totalCost = allCustomerRoomService.reduce((num, service) => {
       num += service.totalCost
       return num
     }, 0)
+    domUpdates.appendCustomerOrdersTotalCost(`Total Cost: ${totalCost}`)
+    return totalCost
   }
 
 }

@@ -12,7 +12,7 @@ describe('RoomService', () => {
 
   beforeEach(() => {
     roomService = new RoomService(roomsServicesData);
-    chai.spy.on(domUpdates, ['appendRoomServiceOrders', 'appendCustomerOrders'], () => true);
+    chai.spy.on(domUpdates, ['appendRoomServiceOrders', 'appendCustomerOrders','appendCustomerOrdersTotalCost'], () => true);
   });
 
   afterEach(() => {
@@ -49,6 +49,7 @@ describe('RoomService', () => {
 
   it('should get total all time room service cost for customer', () => {
     expect(roomService.getTotalRoomServiceCostForCustomer(1)).to.equal(9.89);
+    expect(domUpdates.appendCustomerOrdersTotalCost).to.have.been.called(1);
   });
 
 });

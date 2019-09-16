@@ -42,9 +42,9 @@ const domUpdates = {
     $('#customer-all-orders').append(`<p>${order}</p>`);
   },
 
-  // appendCustomerOrdersTotalCost(cost) {
-  //   $('#customer-all-orders-cost').append(`<p>${cost}</p>`);
-  // }
+  appendCustomerOrdersTotalCost(cost) {
+    $('#customer-all-orders-cost').append(`<p>${cost}</p>`);
+  }
 
 };
 
