@@ -38,6 +38,11 @@ const openHotel = (date) => {
     hotel.roomService.getTotalRoomServiceCostForCustomer(id);
     domUpdates.appendCustomerName(name);
   });
+
+  $('#search-orders-button').on('click', function(event){
+    let date = $('#search-orders-input').val();
+    hotel.roomService.getRoomServiceOrdersForSearchedDate(date)
+  });
 };
 
 const getDate = () => {

@@ -44,6 +44,10 @@ const domUpdates = {
 
   appendCustomerOrdersTotalCost(cost) {
     $('#customer-all-orders-cost').append(`<p>${cost}</p>`);
+  },
+
+  appendRoomServiceOrdersForSelectedDate(order) {
+    $('#searched-orders').append(`<p>${order}</p>`);
   }
 
 };

@@ -12,7 +12,7 @@ describe('RoomService', () => {
 
   beforeEach(() => {
     roomService = new RoomService(roomsServicesData);
-    chai.spy.on(domUpdates, ['appendRoomServiceOrders', 'appendCustomerOrders','appendCustomerOrdersTotalCost'], () => true);
+    chai.spy.on(domUpdates, ['appendRoomServiceOrders', 'appendCustomerOrders','appendCustomerOrdersTotalCost', 'appendRoomServiceOrdersForSelectedDate'], () => true);
   });
 
   afterEach(() => {
@@ -50,6 +50,18 @@ describe('RoomService', () => {
   it('should get total all time room service cost for customer', () => {
     expect(roomService.getTotalRoomServiceCostForCustomer(1)).to.equal(9.89);
     expect(domUpdates.appendCustomerOrdersTotalCost).to.have.been.called(1);
+  });
+
+  it('should get all room service orders for searched date', () => {
+    expect(roomService.getRoomServiceOrdersForSearchedDate("2019/09/15")).to.deep.equal([
+      {
+        "date": "2019/09/15",
+        "food": "Rustic Concrete Sandwich",
+        "totalCost": 6.56,
+        "userID": 90
+      }
+    ]);
+    expect(domUpdates.appendRoomServiceOrdersForSelectedDate).to.have.been.called(3);
   });
 
 });

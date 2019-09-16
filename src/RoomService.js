@@ -37,7 +37,6 @@ class RoomService {
     return roomServices
 }
 
-
   getTotalRoomServiceCostForCustomer(id) {
     let allCustomerRoomService = this.getAllRoomServiceForCustomer(id)
     let totalCost = allCustomerRoomService.reduce((num, service) => {
@@ -46,6 +45,18 @@ class RoomService {
     }, 0)
     domUpdates.appendCustomerOrdersTotalCost(`$${totalCost}`)
     return totalCost
+  }
+
+  getRoomServiceOrdersForSearchedDate(date) {
+    let roomServiceOrders = this.roomServices.filter((service) => {
+      return service.date === date
+    })
+    roomServiceOrders.forEach((order) => {
+      domUpdates.appendRoomServiceOrdersForSelectedDate(`Customer ID: ${order.userID}`)
+      domUpdates.appendRoomServiceOrdersForSelectedDate(`Food Item: ${order.food}`)
+      domUpdates.appendRoomServiceOrdersForSelectedDate(`Cost: $${order.totalCost}`)
+    })
+    return roomServiceOrders
   }
 
 }
