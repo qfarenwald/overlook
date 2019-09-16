@@ -87,6 +87,16 @@ class Booking {
     })
   }
 
+  findRoomsAvailToday(date) {
+    let roomsBookedToday = this.findRoomsBooked(date)
+    let roomsNumbersBookedToday = roomsBookedToday.map((room) => {
+      return room.roomNumber
+    })
+    return this.rooms.filter((room) => {
+      return !roomsNumbersBookedToday.includes(room.number)
+    })
+  }
+
 }
 
 export default Booking;

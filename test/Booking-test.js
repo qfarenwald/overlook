@@ -199,4 +199,8 @@ describe('Booking', () => {
       expect(booking.findBookingsForCustomerForToday("2019/09/15", 65).length).to.equal(1);
   });
 
+  it('should find rooms avail today', () => {
+    expect(booking.findRoomsAvailToday("2019/09/15").length).to.deep.equal(27);
+  });
+
 });
