@@ -97,6 +97,13 @@ class Booking {
     })
   }
 
+  getRoomsAvailByType(date, type) {
+    let availRoomsToday = this.findRoomsAvailToday(date)
+    return availRoomsToday.filter((room) => {
+      return room.roomType === type
+    })
+  }
+
 }
 
 export default Booking;

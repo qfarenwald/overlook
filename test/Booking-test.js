@@ -200,7 +200,100 @@ describe('Booking', () => {
   });
 
   it('should find rooms avail today', () => {
-    expect(booking.findRoomsAvailToday("2019/09/15").length).to.deep.equal(27);
+    expect(booking.findRoomsAvailToday("2019/09/15").length).to.equal(27);
+  });
+
+  it('should find available rooms by type', () => {
+    expect(booking.getRoomsAvailByType("2019/09/15", "single room")).to.deep.equal([
+        {
+          "bedSize": "full",
+          "bidet": true,
+          "costPerNight": 228.01,
+          "numBeds": 1,
+          "number": 2,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "queen",
+          "bidet": false,
+          "costPerNight": 296.48,
+          "numBeds": 2,
+          "number": 10,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "queen",
+          "bidet": false,
+          "costPerNight": 247.86,
+          "numBeds": 1,
+          "number": 12,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "king",
+          "bidet": true,
+          "costPerNight": 229.8,
+          "numBeds": 1,
+          "number": 16,
+          "roomType": "single room",
+        },
+        {
+          "bedSize": "queen",
+          "bidet": true,
+          "costPerNight": 332.07,
+          "numBeds": 1,
+          "number": 18,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "full",
+          "bidet": false,
+          "costPerNight": 245.42,
+          "numBeds": 2,
+          "number": 23,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "queen",
+          "bidet": true,
+          "costPerNight": 391.55,
+          "numBeds": 1,
+          "number": 26,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "twin",
+          "bidet": false,
+          "costPerNight": 390.68,
+          "numBeds": 2,
+          "number": 31,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "king",
+          "bidet": true,
+          "costPerNight": 329.96,
+          "numBeds": 2,
+          "number": 34,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "king",
+          "bidet": false,
+          "costPerNight": 171.23,
+          "numBeds": 2,
+          "number": 47,
+          "roomType": "single room"
+        },
+        {
+          "bedSize": "twin",
+          "bidet": false,
+          "costPerNight": 271.95,
+          "numBeds": 1,
+          "number": 49,
+          "roomType": "single room"
+        }
+      ]);
   });
 
 });
