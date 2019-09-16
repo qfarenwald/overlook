@@ -37,11 +37,14 @@ const openHotel = (date) => {
     hotel.roomService.getAllRoomServiceForCustomer(id);
     hotel.roomService.getTotalRoomServiceCostForCustomer(id);
     domUpdates.appendCustomerName(name);
+    $('#new-customer-button').prop('disabled', true)
   });
 
   $('#search-orders-button').on('click', function(event){
     let date = $('#search-orders-input').val();
     hotel.roomService.getRoomServiceOrdersForSearchedDate(date)
+    $('#search-orders-input').val('')
+    $('#search-orders-button').prop('disabled', true)
   });
 };
 
@@ -78,4 +81,15 @@ $('#new-customer-input').keyup((e) => {
   } else {
     $('#new-customer-button').prop('disabled', true)
   }
+});
+
+$('#search-orders-button').prop('disabled', true)
+
+$('#search-orders-input').keyup((e) => {
+  if ($('#search-orders-input').val() !== '') {
+    $('#search-orders-button').prop('disabled', false);
+  } else {
+    $('#search-orders-button').prop('disabled', true)
+  }
+
 });
