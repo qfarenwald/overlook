@@ -47,6 +47,7 @@ const openHotel = (date) => {
       $('#rooms-booking').hide();
       $('#rooms-no-booking').show();
     }
+    $('#select-room-type-section').hide();
   });
 
   $('#search-orders-button').on('click', function(event){
@@ -57,6 +58,11 @@ const openHotel = (date) => {
     $('#search-rooms-input').val('')
     $('#search-rooms-button').prop('disabled', true)
   });
+
+  $('#new-booking-button').on('click', function(event){
+    $('#select-room-type-section').show();
+  });
+
 };
 
 const getDate = () => {
