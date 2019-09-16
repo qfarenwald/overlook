@@ -63,7 +63,6 @@ describe('RoomService', () => {
       }
     ]);
     expect(domUpdates.appendRoomServiceOrdersForSelectedDate).to.have.been.called(3);
-    expect(domUpdates.emptyRoomServiceOrdersForSelectedDate).to.have.been.called(1);
   });
 
 });

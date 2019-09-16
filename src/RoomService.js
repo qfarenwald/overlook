@@ -31,7 +31,6 @@ class RoomService {
     let roomServices = this.roomServices.filter((service) => {
       return service.userID === parseInt(id)
     })
-    domUpdates.emptyRoomServiceOrders()
     roomServices.forEach((order) => {
       domUpdates.appendCustomerOrders(`Date: ${order.date}`)
       domUpdates.appendCustomerOrders(`Food Item: ${order.food}`)
@@ -66,8 +65,6 @@ class RoomService {
     let roomServiceOrders = this.roomServices.filter((service) => {
       return service.date === date
     })
-    // showing up twice
-    domUpdates.emptyRoomServiceOrdersForSelectedDate()
     roomServiceOrders.forEach((order) => {
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Customer ID: ${order.userID}`)
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Food Item: ${order.food}`)

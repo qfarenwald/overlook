@@ -71,8 +71,6 @@ $('.tabs-nav a').on('click', function(event){
   $($(this).attr('href')).show();
 });
 
-// hide customer orders and room info
-
 $('#new-customer-button').prop('disabled', true)
 
 $('#new-customer-input').keyup((e) => {
