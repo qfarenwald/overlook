@@ -45,6 +45,8 @@ const openHotel = (date) => {
     hotel.roomService.getRoomServiceOrdersForSearchedDate(date)
     $('#search-orders-input').val('')
     $('#search-orders-button').prop('disabled', true)
+    $('#search-rooms-input').val('')
+    $('#search-rooms-button').prop('disabled', true)
   });
 };
 
@@ -88,6 +90,17 @@ $('#search-orders-input').keyup((e) => {
     $('#search-orders-button').prop('disabled', false);
   } else {
     $('#search-orders-button').prop('disabled', true)
+  }
+
+});
+
+$('#search-rooms-button').prop('disabled', true)
+
+$('#search-rooms-input').keyup((e) => {
+  if ($('#search-rooms-input').val() !== '') {
+    $('#search-rooms-button').prop('disabled', false);
+  } else {
+    $('#search-rooms-button').prop('disabled', true)
   }
 
 });
