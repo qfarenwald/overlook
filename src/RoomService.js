@@ -45,7 +45,7 @@ class RoomService {
       return num
     }, 0)
     domUpdates.appendCustomerOrdersTotalCost(`$${totalCost}`)
-    return totalCost
+    return parseFloat(totalCost.toFixed(2))
   }
 
   getRoomServiceOrdersForSearchedDate(date) {
