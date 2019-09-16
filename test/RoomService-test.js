@@ -12,7 +12,7 @@ describe('RoomService', () => {
 
   beforeEach(() => {
     roomService = new RoomService(roomsServicesData);
-    chai.spy.on(domUpdates, ['appendRoomServiceOrders', 'appendCustomerOrders','appendCustomerOrdersTotalCost', 'appendRoomServiceOrdersForSelectedDate'], () => true);
+    chai.spy.on(domUpdates, ['appendRoomServiceOrders', 'appendCustomerOrders','appendCustomerOrdersTotalCost', 'appendRoomServiceOrdersForSelectedDate', 'emptyRoomServiceOrdersForSelectedDate', 'emptyRoomServiceOrders'], () => true);
   });
 
   afterEach(() => {
@@ -33,6 +33,7 @@ describe('RoomService', () => {
       }
     ]);
     expect(domUpdates.appendRoomServiceOrders).to.have.been.called(3);
+    expect(domUpdates.emptyRoomServiceOrders).to.have.been.called(1);
   });
 
   it('should get all room service orders for customer', () => {
@@ -62,6 +63,7 @@ describe('RoomService', () => {
       }
     ]);
     expect(domUpdates.appendRoomServiceOrdersForSelectedDate).to.have.been.called(3);
+    expect(domUpdates.emptyRoomServiceOrdersForSelectedDate).to.have.been.called(1);
   });
 
 });

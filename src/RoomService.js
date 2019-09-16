@@ -10,6 +10,7 @@ class RoomService {
       return service.date === date
     })
     roomServiceOrders.forEach((order) => {
+      domUpdates.emptyRoomServiceOrders()
       domUpdates.appendRoomServiceOrders(`Customer ID: ${order.userID}`)
       domUpdates.appendRoomServiceOrders(`Food Item: ${order.food}`)
       domUpdates.appendRoomServiceOrders(`Cost: $${order.totalCost}`)
@@ -52,6 +53,7 @@ class RoomService {
       return service.date === date
     })
     roomServiceOrders.forEach((order) => {
+      domUpdates.emptyRoomServiceOrdersForSelectedDate()
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Customer ID: ${order.userID}`)
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Food Item: ${order.food}`)
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Cost: $${order.totalCost}`)

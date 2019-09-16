@@ -30,6 +30,10 @@ const domUpdates = {
     $('#service-orders').append(`<p>${order}</p>`);
   },
 
+  emptyRoomServiceOrders() {
+    $('#service-orders').empty();
+  },
+
   appendCustomerDropdown(id, name) {
     $('#name-option').append(`<option value="${id}" id="${id}-option">${id} ${name}</option>`);
   },
@@ -48,7 +52,11 @@ const domUpdates = {
 
   appendRoomServiceOrdersForSelectedDate(order) {
     $('#searched-orders').append(`<p>${order}</p>`);
-  }
+  },
+
+  emptyRoomServiceOrdersForSelectedDate() {
+    $('#service-orders').empty();
+  },
 
 };
 
