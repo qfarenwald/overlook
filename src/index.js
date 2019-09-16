@@ -48,6 +48,7 @@ const openHotel = (date) => {
       $('#rooms-no-booking').show();
     }
     $('#select-room-type-section').hide();
+    $('#select-room-type-section-dropdown').hide();
   });
 
   $('#search-orders-button').on('click', function(event){
@@ -61,6 +62,12 @@ const openHotel = (date) => {
 
   $('#new-booking-button').on('click', function(event){
     $('#select-room-type-section').show();
+  });
+
+  $('#rooms-no-booking').on('click', function(event){
+    if (event.target.id === "search-rooms-button") {
+       $('#select-room-type-section-dropdown').show();
+    }
   });
 
 };
