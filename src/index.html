@@ -62,8 +62,22 @@
           </section>
           <section class="customer-info">
             <h3>CUSTOMER</h3>
-            <p class="customer-name-place">NO CUSTOMER SELECTED</p>
-            <p id="user-name"></p>
+              <p class="customer-name-place">NO CUSTOMER SELECTED</p>
+              <p id="user-name"></p>
+              <h4 class="customer-info">BOOKINGS</h4>
+                <p id="customer-booking-info">NO CURRENT BOOKINGS</p>
+                <button id="new-booking-button" type="button">CREATE NEW BOOKING</button>
+                <h4 class="customer-info">ROOM TYPE</h4>
+                  <select id="room-option" name="rooms">
+                    <option value="1-room" id="$1-room-option">Single Room</option>
+                    <option value="1-room" id="$1-room-option">Suite</option>
+                    <option value="1-room" id="$1-room-option">Junior Suite</option>
+                    <option value="2-room" id="$2-room-option">Residential Suite</option>
+                  </select>
+                  <button id="search-rooms-button" type="button">SEARCH FOR ROOM TYPE</button>
+                  <p id="room-filter"></p>
+                  <p id="room-filter">NO ROOMS MATCH SELECTION</p>
+                  <button id="book-button" type="button">BOOK</button>
           </section>
         </div>
         <div class="tab" id="tab-orders">
@@ -79,10 +93,10 @@
           <section class="customer-info">
             <h3>CUSTOMER</h3>
               <p class="customer-name-place" id="customer-room-service">NO CUSTOMER SELECTED</p>
-                <h4 class="customer-info">ALL ORDERS</h4>
-                  <p id="customer-all-orders"></p>
-                <h4 class="customer-info">TOTAL COST</h4>
-                  <p id="customer-all-orders-cost"></p>
+              <h4 class="customer-info">ALL ORDERS</h4>
+                <p id="customer-all-orders"></p>
+              <h4 class="customer-info">TOTAL COST</h4>
+                <p id="customer-all-orders-cost"></p>
           </section>
         </div>
       </section>
