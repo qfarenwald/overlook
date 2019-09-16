@@ -55,7 +55,7 @@ const domUpdates = {
   },
 
   emptyRoomServiceOrdersForSelectedDate() {
-    $('#service-orders').empty();
+    $('#searched-orders').empty();
   },
 
 };
