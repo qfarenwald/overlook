@@ -67,6 +67,8 @@ const openHotel = (date) => {
   $('#rooms-no-booking').on('click', function(event){
     if (event.target.id === "search-rooms-button") {
        $('#select-room-type-section-dropdown').show();
+       let value = $('#room-option').val()
+       console.log(value)
     }
   });
 
