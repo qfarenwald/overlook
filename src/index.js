@@ -34,7 +34,7 @@ const openHotel = (date) => {
     let id = $('#name-option').val();
     let selectedUser = hotel.selectCustomer(id);
     let name = selectedUser.name;
-    hotel.roomService.getAllRoomServiceForCustomer(id);
+    hotel.roomService.showAllRoomServiceForCustomer(id);
     hotel.roomService.getTotalRoomServiceCostForCustomer(id);
     domUpdates.appendCustomerName(name);
     $('#new-customer-button').prop('disabled', true)

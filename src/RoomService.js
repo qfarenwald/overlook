@@ -26,16 +26,30 @@ class RoomService {
     }, 0)
   }
 
+// get all and show all... how only show up once?
   getAllRoomServiceForCustomer(id) {
     let roomServices = this.roomServices.filter((service) => {
       return service.userID === parseInt(id)
     })
+    domUpdates.emptyRoomServiceOrders()
     roomServices.forEach((order) => {
       domUpdates.appendCustomerOrders(`Date: ${order.date}`)
       domUpdates.appendCustomerOrders(`Food Item: ${order.food}`)
       domUpdates.appendCustomerOrders(`Cost: $${order.totalCost}`)
-  })
+    })
     return roomServices
+  }
+
+// not testing
+  showAllRoomServiceForCustomer(id) {
+    let roomServices = this.roomServices.filter((service) => {
+      return service.userID === parseInt(id)
+    roomServices.forEach((order) => {
+      domUpdates.appendCustomerOrders(`Date: ${order.date}`)
+      domUpdates.appendCustomerOrders(`Food Item: ${order.food}`)
+      domUpdates.appendCustomerOrders(`Cost: $${order.totalCost}`)
+    })
+  })
 }
 
   getTotalRoomServiceCostForCustomer(id) {
@@ -52,8 +66,9 @@ class RoomService {
     let roomServiceOrders = this.roomServices.filter((service) => {
       return service.date === date
     })
+    // showing up twice
+    domUpdates.emptyRoomServiceOrdersForSelectedDate()
     roomServiceOrders.forEach((order) => {
-      domUpdates.emptyRoomServiceOrdersForSelectedDate()
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Customer ID: ${order.userID}`)
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Food Item: ${order.food}`)
       domUpdates.appendRoomServiceOrdersForSelectedDate(`Cost: $${order.totalCost}`)

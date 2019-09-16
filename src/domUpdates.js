@@ -30,6 +30,7 @@ const domUpdates = {
     $('#service-orders').append(`<p>${order}</p>`);
   },
 
+//using?
   emptyRoomServiceOrders() {
     $('#service-orders').empty();
   },
@@ -54,6 +55,7 @@ const domUpdates = {
     $('#searched-orders').append(`<p>${order}</p>`);
   },
 
+//using?
   emptyRoomServiceOrdersForSelectedDate() {
     $('#searched-orders').empty();
   },
