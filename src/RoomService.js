@@ -32,7 +32,7 @@ class RoomService {
     roomServices.forEach((order) => {
       domUpdates.appendCustomerOrders(`Date: ${order.date}`)
       domUpdates.appendCustomerOrders(`Food Item: ${order.food}`)
-      domUpdates.appendCustomerOrders(`Cost: ${order.totalCost}`)
+      domUpdates.appendCustomerOrders(`Cost: $${order.totalCost}`)
   })
     return roomServices
 }
@@ -44,7 +44,7 @@ class RoomService {
       num += service.totalCost
       return num
     }, 0)
-    domUpdates.appendCustomerOrdersTotalCost(`Total Cost: ${totalCost}`)
+    domUpdates.appendCustomerOrdersTotalCost(`$${totalCost}`)
     return totalCost
   }
 
