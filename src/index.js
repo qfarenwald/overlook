@@ -34,10 +34,19 @@ const openHotel = (date) => {
     let id = $('#name-option').val();
     let selectedUser = hotel.selectCustomer(id);
     let name = selectedUser.name;
+    let date = getDate();
+    domUpdates.appendCustomerName(name);
+    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)
     hotel.roomService.showAllRoomServiceForCustomer(id);
     hotel.roomService.getTotalRoomServiceCostForCustomer(id);
-    domUpdates.appendCustomerName(name);
     $('#new-customer-button').prop('disabled', true)
+    if (bookingsToday.length > 0) {
+      $('#rooms-booking').show();
+      $('#rooms-no-booking').hide();
+    } else {
+      $('#rooms-booking').hide();
+      $('#rooms-no-booking').show();
+    }
   });
 
   $('#search-orders-button').on('click', function(event){

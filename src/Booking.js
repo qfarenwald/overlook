@@ -78,6 +78,15 @@ class Booking {
     return leastPopularDates
   }
 
+  findBookingsForCustomerForToday(date, id) {
+    let bookingsToday = this.bookings.filter((booking) => {
+      return booking.date === date;
+    })
+    return bookingsToday.filter((booking) => {
+      return booking.userID === parseInt(id);
+    })
+  }
+
 }
 
 export default Booking;

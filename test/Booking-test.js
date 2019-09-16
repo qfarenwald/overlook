@@ -186,4 +186,17 @@ describe('Booking', () => {
     expect(domUpdates.appendLeastPopDate).to.have.been.called(1);
   });
 
+  it('should find bookings for a user', () => {
+    expect(booking.findBookingsForCustomerForToday("2019/09/15", 1)).to.deep.equal([]);
+    expect(booking.findBookingsForCustomerForToday("2019/09/15", 1).length).to.equal(0);
+    expect(booking.findBookingsForCustomerForToday("2019/09/15", 65)).to.deep.equal([
+      {
+        "date": "2019/09/15",
+        "roomNumber": 44,
+        "userID": 65
+      }
+      ]);
+      expect(booking.findBookingsForCustomerForToday("2019/09/15", 65).length).to.equal(1);
+  });
+
 });
