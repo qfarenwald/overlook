@@ -56,8 +56,22 @@ const openHotel = (date) => {
     let id = hotel.user.length + 1
     let name = $('#new-customer-input').val()
     let user = new User(id, name);
+    let date = getDate();
     hotel.user.push(user)
     hotel.displayCustomers()
+    $('.customer-info').show();
+    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)
+    domUpdates.appendCustomerName(name);
+    $('#new-customer-button').prop('disabled', true)
+    if (bookingsToday.length > 0) {
+      $('#rooms-booking').show();
+      $('#rooms-no-booking').hide();
+    } else {
+      $('#rooms-booking').hide();
+      $('#rooms-no-booking').show();
+    }
+    $('#select-room-type-section').hide();
+    $('#select-room-type-section-dropdown').hide();
     $('#new-customer-input').val('')
     $('#new-customer-button').prop('disabled', true)
   });
@@ -82,6 +96,10 @@ const openHotel = (date) => {
        let type = $('#room-option').val().toLowerCase()
        let availRooms = hotel.booking.getRoomsAvailByType(date, type)
        domUpdates.appendAvailRoomsByType(availRooms)
+    }
+    if (event.target.id === "book-button") {
+       console.log('hello')
+       // instantiate new booking
     }
   });
 };
