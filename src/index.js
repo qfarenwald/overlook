@@ -56,7 +56,8 @@ const openHotel = (date) => {
     let id = hotel.user.length + 1
     let name = $('#new-customer-input').val()
     let user = new User(id, name);
-    console.log(user)
+    hotel.user.push(user)
+    hotel.displayCustomers()
   });
 
   $('#search-orders-button').on('click', function(event){
