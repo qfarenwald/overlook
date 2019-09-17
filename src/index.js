@@ -4,6 +4,7 @@ import './css/base.scss';
 
 import './images/bright-colors-daylight-2742812.jpg'
 import Hotel from './Hotel.js';
+import User from './User.js';
 import domUpdates from './domUpdates';
 
 let hotel;
@@ -51,6 +52,13 @@ const openHotel = (date) => {
     $('#select-room-type-section-dropdown').hide();
   });
 
+  $('#new-customer-button').on('click', function(event){
+    let id = hotel.user.length + 1
+    let name = $('#new-customer-input').val()
+    let user = new User(id, name);
+    console.log(user)
+  });
+
   $('#search-orders-button').on('click', function(event){
     let date = $('#search-orders-input').val();
     hotel.roomService.getRoomServiceOrdersForSearchedDate(date)
@@ -69,7 +77,6 @@ const openHotel = (date) => {
        $('#select-room-type-section-dropdown').show();
        let date = getDate();
        let type = $('#room-option').val().toLowerCase()
-       console.log(type)
        let availRooms = hotel.booking.getRoomsAvailByType(date, type)
        domUpdates.appendAvailRoomsByType(availRooms)
     }

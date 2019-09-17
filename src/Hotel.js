@@ -5,7 +5,7 @@ import domUpdates from './domUpdates.js';
 
 class Hotel {
   constructor(usersData, roomsData, bookingsData, roomsServicesData) {
-    this.user = new User(usersData);
+    this.user = usersData;
     this.booking = new Booking(roomsData, bookingsData);
     this.roomService = new RoomService(roomsServicesData);
   }
@@ -17,7 +17,7 @@ class Hotel {
   }
 
   displayCustomers() {
-    let allUsers = this.user.users
+    let allUsers = this.user
     allUsers.forEach((user) => {
     domUpdates.appendCustomerDropdown(user.id, user.name)
     })
@@ -25,7 +25,7 @@ class Hotel {
   }
 
   selectCustomer(id) {
-    return this.user.users.find((user) => {
+    return this.user.find((user) => {
       return user.id === parseInt(id)
     })
   }

@@ -61,7 +61,6 @@ const domUpdates = {
   },
 
   appendAvailRoomsByType(rooms){
-    console.log(rooms)
       rooms.forEach((room) => {
       $('#room-filter').append(`Room Type: <p>${room.roomType}</p>`);
     })
