@@ -295,4 +295,17 @@ describe('Booking', () => {
     );
   });
 
+  // it('should find a room based on a booking id', () => {
+  //   expect(booking.findRoomBasedOnBookingID(1)).to.deep.equal(
+  //     {
+  //       number: 1,
+  //       roomType: "residential suite",
+  //       bidet: false,
+  //       bedSize: "twin",
+  //       numBeds: 1,
+  //       costPerNight: 265.03
+  //     }
+  //   );
+  // });
+
 });
