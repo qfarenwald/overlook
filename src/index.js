@@ -100,7 +100,6 @@ const openHotel = (date) => {
     if (event.target.id === "book-button") {
       let id = $('#name-option').val();
       let date = getDate();
-      //change to closest syntax
       let roomNumber = event.target.parentNode.firstElementChild.childNodes[1].innerText;
       let newBooking = hotel.booking.makeNewBooking(id, date, roomNumber)
       hotel.booking.bookings.push(newBooking)
