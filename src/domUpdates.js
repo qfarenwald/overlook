@@ -59,10 +59,13 @@ const domUpdates = {
   emptyRoomServiceOrdersForSelectedDate() {
     $('#searched-orders').empty();
   },
-  // 
-  // appendCurrentBookingForCustomer(order) {
-  //   // $('#searched-orders').append(`<p>${order}</p>`);
-  // }
+
+  appendAvailRoomsByType(rooms){
+    console.log(rooms)
+      rooms.forEach((room) => {
+      $('#room-filter').append(`Room Type: <p>${room.roomType}</p>`);
+    })
+  }
 
 };
 
