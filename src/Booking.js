@@ -104,6 +104,14 @@ class Booking {
     })
   }
 
+  makeNewBooking(id, date, roomNumber) {
+    newBooking = {
+      userID: id,
+      date: date,
+      roomNumber: roomNumber    
+    }
+  }
+
 }
 
 export default Booking;

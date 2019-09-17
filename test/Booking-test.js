@@ -296,4 +296,8 @@ describe('Booking', () => {
       ]);
   });
 
+  it('should make a new booking', () => {
+    expect(booking.makeNewBooking().length).to.deep.equal({});
+  });
+
 });
