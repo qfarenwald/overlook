@@ -73,7 +73,7 @@ const domUpdates = {
         <p>Customer ID: ${order.userID}</p>
         <p>Food Item: ${order.food}</p>
         <p>Cost: $${order.totalCost}</p>
-        `);
+      `);
     })
   },
 

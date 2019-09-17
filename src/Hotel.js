@@ -12,7 +12,6 @@ class Hotel {
 
   totalRevenueToday(date) {
     let revenueToday = this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
-    domUpdates.appendTotalRevenueToday(parseFloat(revenueToday).toFixed(2))
     return revenueToday
   }
 

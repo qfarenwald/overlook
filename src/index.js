@@ -5,7 +5,7 @@ import './css/base.scss';
 import './images/bright-colors-daylight-2742812.jpg'
 import Hotel from './Hotel.js';
 import User from './User.js';
-import domUpdates from './domUpdates';
+import domUpdates from './domUpdates.js';
 
 let hotel;
 
@@ -20,13 +20,14 @@ Promise.all([
   .catch(err => console.log(err))
 
 const openHotel = (date) => {
-  domUpdates.appendRoomsAvailToday(hotel.booking.totalRoomsAvailToday(date))
-  domUpdates.appendRoomsOccToday(hotel.booking.percentageRoomsOccToday(date))
-  hotel.totalRevenueToday(date)
-  domUpdates.appendMostPopDate(hotel.booking.getMostPopDates())
-  domUpdates.appendLeastPopDate(hotel.booking.getLeastPopDates())
-  domUpdates.appendRoomServiceOrders(hotel.roomService.getRoomServiceOrdersToday(date))
   hotel.displayCustomers()
+  domUpdates.appendRoomsAvailToday(hotel.booking.totalRoomsAvailToday(date));
+  domUpdates.appendRoomsOccToday(hotel.booking.percentageRoomsOccToday(date));
+  domUpdates.appendTotalRevenueToday(hotel.totalRevenueToday(date));
+  domUpdates.appendMostPopDate(hotel.booking.getMostPopDates());
+  domUpdates.appendLeastPopDate(hotel.booking.getLeastPopDates());
+  domUpdates.appendRoomServiceOrders(hotel.roomService.getRoomServiceOrdersToday(date));
+
 
   $('.customer-info').hide();
 
