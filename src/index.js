@@ -4,7 +4,7 @@ import './css/base.scss';
 
 import './images/bright-colors-daylight-2742812.jpg'
 import Hotel from './Hotel.js';
-import User from './User.js';
+// import User from './User.js';
 import domUpdates from './domUpdates.js';
 
 let hotel;
@@ -27,7 +27,6 @@ const openHotel = (date) => {
   domUpdates.appendMostPopDate(hotel.booking.getMostPopDates());
   domUpdates.appendLeastPopDate(hotel.booking.getLeastPopDates());
   domUpdates.appendRoomServiceOrders(hotel.roomService.getRoomServiceOrdersToday(date));
-
 
   $('.customer-info').hide();
 
@@ -54,11 +53,11 @@ const openHotel = (date) => {
   });
 
   $('#new-customer-button').on('click', function(event){
-    let id = hotel.user.length + 1
+    let id = hotel.users.length + 1
     let name = $('#new-customer-input').val()
-    let user = new User(id, name);
+    let user = hotel.makeNewCustomer(id, name);
     let date = getDate();
-    hotel.user.push(user)
+    hotel.users.push(user)
     hotel.displayCustomers()
     $('.customer-info').show();
     let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)

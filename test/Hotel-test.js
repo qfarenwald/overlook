@@ -44,4 +44,13 @@ describe('Hotel', () => {
     );
   });
 
+  it('should make a new customer', () => {
+    expect(hotel.makeNewCustomer(101, "Bob Wild")).to.deep.equal(
+      {
+      id: 101,
+      name: "Bob Wild"
+      }
+    );
+  });
+
 });

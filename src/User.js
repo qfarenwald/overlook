@@ -1,11 +1,11 @@
 // import Class from './Class.js';
-
-class User {
-  constructor(id, name) {
-    this.id = id;
-    this.name = name;
-  }
-
-}
-
-export default User;
+//
+// class User {
+//   constructor(id, name) {
+//     this.id = id;
+//     this.name = name;
+//   }
+//
+// }
+//
+// export default User;

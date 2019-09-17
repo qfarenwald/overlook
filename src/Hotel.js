@@ -1,11 +1,11 @@
-import User from './User.js';
+// import User from './User.js';
 import Booking from './Booking.js';
 import RoomService from './RoomService.js';
 import domUpdates from './domUpdates.js';
 
 class Hotel {
   constructor(usersData, roomsData, bookingsData, roomsServicesData) {
-    this.user = usersData;
+    this.users = usersData;
     this.booking = new Booking(roomsData, bookingsData);
     this.roomService = new RoomService(roomsServicesData);
   }
@@ -16,7 +16,7 @@ class Hotel {
   }
 
   displayCustomers() {
-    let allUsers = this.user
+    let allUsers = this.users
     allUsers.forEach((user) => {
     domUpdates.appendCustomerDropdown(user.id, user.name)
     })
@@ -24,9 +24,17 @@ class Hotel {
   }
 
   selectCustomer(id) {
-    return this.user.find((user) => {
+    return this.users.find((user) => {
       return user.id === parseInt(id)
     })
+  }
+
+  makeNewCustomer(id, name) {
+    let newCustomer = {
+      id: id,
+      name: name
+    }
+    return newCustomer
   }
 
 }
