@@ -10,22 +10,22 @@ class Hotel {
   }
 
   totalRevenueToday(date) {
-    let revenueToday = this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
-    return parseFloat(revenueToday.toFixed(2))
+    let revenueToday = this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date);
+    return parseFloat(revenueToday.toFixed(2));
   }
 
   displayCustomers() {
-    let allUsers = this.users
+    let allUsers = this.users;
     allUsers.forEach((user) => {
-    domUpdates.appendCustomerDropdown(user.id, user.name)
-    })
-    return allUsers
+      domUpdates.appendCustomerDropdown(user.id, user.name);
+    });
+    return allUsers;
   }
 
   selectCustomer(id) {
     return this.users.find((user) => {
-      return user.id === parseInt(id)
-    })
+      return user.id === parseInt(id);
+    });
   }
 
   makeNewCustomer(id, name) {
@@ -33,7 +33,7 @@ class Hotel {
       id: id,
       name: name
     }
-    return newCustomer
+    return newCustomer;
   }
 
 }

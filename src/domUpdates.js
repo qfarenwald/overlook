@@ -71,8 +71,8 @@ const domUpdates = {
     })
   },
 
-  appendAvailRoomsByType(rooms){
-      rooms.forEach((room) => {
+  appendAvailRoomsByType(rooms) {
+    rooms.forEach((room) => {
       $('#room-filter').append(`
         <div>
         <p>Room Number: <span>${room.number}</span></p>
@@ -87,8 +87,8 @@ const domUpdates = {
     })
   },
 
-  appendAllAvailRooms(rooms){
-      rooms.forEach((room) => {
+  appendAllAvailRooms(rooms) {
+    rooms.forEach((room) => {
       $('#room-avail').append(`
         <div>
         <p>Room Number: <span>${room.number}</span></p>
@@ -102,9 +102,9 @@ const domUpdates = {
       `);
     })
   },
-//////HEREEEEEEEEE
-  appendCustomerBookingForToday(bookings){
-      bookings.forEach((booking) => {
+
+  appendCustomerBookingForToday(bookings) {
+    bookings.forEach((booking) => {
       $('#customer-booking-info-fo-today').append(`
         <p>Room Number: <span>${booking.roomNumber}</span></p>
       `);
