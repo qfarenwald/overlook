@@ -105,11 +105,12 @@ class Booking {
   }
 
   makeNewBooking(id, date, roomNumber) {
-    newBooking = {
+    let newBooking = {
       userID: id,
       date: date,
-      roomNumber: roomNumber    
+      roomNumber: roomNumber
     }
+    return newBooking
   }
 
 }

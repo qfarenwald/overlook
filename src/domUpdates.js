@@ -62,12 +62,17 @@ const domUpdates = {
 
   appendAvailRoomsByType(rooms){
       rooms.forEach((room) => {
-      $('#room-filter').append(`<p>Room Number: ${room.number}</p>`);
-      $('#room-filter').append(`<p>Number Of Beds: ${room.numBeds}</p>`);
-      $('#room-filter').append(`<p>Size of Beds: ${room.bedSize}</p>`);
-      $('#room-filter').append(`<p>Bidet: ${room.bidet}</p>`);
-      $('#room-filter').append(`<p>Cost Per Night: ${room.costPerNight}</p>`);
-      $('#room-filter').append(`<button id="book-button" type="button">BOOK</button>`);
+      $('#room-filter').append(`
+        <div>
+        <p>Room Number: <span>${room.number}</span></p>
+        <p>Number Of Beds: ${room.numBeds}</p>
+        <p>Size of Beds: ${room.bedSize}</p>
+        <p>Bidet: ${room.bidet}</p>
+        <p>Cost Per Night: ${room.costPerNight}</p>
+        <button id="book-button" type="button">BOOK</button>
+        <br>
+        </div>
+      `);
     })
   }
 

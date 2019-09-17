@@ -297,7 +297,7 @@ describe('Booking', () => {
   });
 
   it('should make a new booking', () => {
-    expect(booking.makeNewBooking().length).to.deep.equal({});
+    expect(booking.makeNewBooking(1, "2019/09/15", 2).length).to.deep.equal({ userID: 1, date: '2019/09/15', roomNumber: 2 });
   });
 
 });

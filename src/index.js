@@ -98,12 +98,12 @@ const openHotel = (date) => {
        domUpdates.appendAvailRoomsByType(availRooms)
     }
     if (event.target.id === "book-button") {
-      console.log(event)
-      // // let id =
-      // let date = getDate();
-      // let roomNumber = event.target.parentNode.children.closet("room-size").val();
-      // console.log(roomNumber)
-      // let newBooking = booking.makeNewBooking(id, date, roomNumber)
+      let id = $('#name-option').val();
+      let date = getDate();
+      //change to closest syntax
+      let roomNumber = event.target.parentNode.firstElementChild.childNodes[1].innerText;
+      let newBooking = hotel.booking.makeNewBooking(id, date, roomNumber)
+      hotel.booking.bookings.push(newBooking)
     }
   });
 };
