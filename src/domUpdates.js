@@ -101,8 +101,15 @@ const domUpdates = {
         </div>
       `);
     })
+  },
+//////HEREEEEEEEEE
+  appendCustomerBookingForToday(bookings){
+      bookings.forEach((booking) => {
+      $('#customer-booking-info-fo-today').append(`
+        <p>Room Number: <span>${booking.roomNumber}</span></p>
+      `);
+    })
   }
-
 };
 
 export default domUpdates;

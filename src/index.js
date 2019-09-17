@@ -35,13 +35,14 @@ const openHotel = (date) => {
     let selectedUser = hotel.selectCustomer(id);
     let name = selectedUser.name;
     let date = getDate();
+    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)
     domUpdates.appendCustomerName(name);
     domUpdates.appendCustomerOrders(hotel.roomService.getAllRoomServiceForCustomer(id))
-    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)
     domUpdates.appendCustomerOrdersTotalCost(hotel.roomService.getTotalRoomServiceCostForCustomer(id));
     $('#new-customer-button').prop('disabled', true)
     if (bookingsToday.length > 0) {
       $('#rooms-booking').show();
+      domUpdates.appendCustomerBookingForToday(hotel.booking.findBookingsForCustomerForToday(date, id))
       $('#rooms-no-booking').hide();
     } else {
       $('#rooms-booking').hide();
