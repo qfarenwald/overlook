@@ -58,6 +58,8 @@ const openHotel = (date) => {
     let user = new User(id, name);
     hotel.user.push(user)
     hotel.displayCustomers()
+    $('#new-customer-input').val('')
+    $('#new-customer-button').prop('disabled', true)
   });
 
   $('#search-orders-button').on('click', function(event){
