@@ -38,8 +38,8 @@ describe('Hotel', () => {
   it('should display select a customer', () => {
     expect(hotel.selectCustomer(1)).to.deep.equal(
       {
-      "id": 1,
-      "name": "Matilde Larson"
+        "id": 1,
+        "name": "Matilde Larson"
       }
     );
   });
@@ -47,8 +47,8 @@ describe('Hotel', () => {
   it('should make a new customer', () => {
     expect(hotel.makeNewCustomer(101, "Bob Wild")).to.deep.equal(
       {
-      id: 101,
-      name: "Bob Wild"
+        id: 101,
+        name: "Bob Wild"
       }
     );
   });

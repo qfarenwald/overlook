@@ -29,10 +29,10 @@ describe('RoomService', () => {
   it('should get all room service orders for customer', () => {
     expect(roomService.getAllRoomServiceForCustomer(1)).to.deep.equal([
       {
-      "date": "2019/09/28",
-      "food": "Refined Rubber Sandwich",
-      "totalCost": 9.89,
-      "userID": 1
+        "date": "2019/09/28",
+        "food": "Refined Rubber Sandwich",
+        "totalCost": 9.89,
+        "userID": 1
       }
     ]);
   });
