@@ -1,22 +1,14 @@
 import chai from 'chai';
 const expect = chai.expect;
-import spies from 'chai-spies'
-chai.use(spies);
 
 import RoomService from '../src/RoomService.js';
 import roomsServicesData from '../data/roomServices.js';
-import domUpdates from '../src/domUpdates.js'
 
 describe('RoomService', () => {
   let roomService;
 
   beforeEach(() => {
     roomService = new RoomService(roomsServicesData);
-    chai.spy.on(domUpdates, ['appendRoomServiceOrders', 'appendCustomerOrders','appendCustomerOrdersTotalCost', 'appendRoomServiceOrdersForSelectedDate', 'emptyRoomServiceOrdersForSelectedDate', 'emptyRoomServiceOrders'], () => true);
-  });
-
-  afterEach(() => {
-    chai.spy.restore(domUpdates)
   });
 
   it('should be a function', () => {
@@ -32,8 +24,6 @@ describe('RoomService', () => {
         "userID": 90
       }
     ]);
-    // expect(domUpdates.appendRoomServiceOrders).to.have.been.called(3);
-    // expect(domUpdates.emptyRoomServiceOrders).to.have.been.called(1);
   });
 
   it('should get all room service orders for customer', () => {
@@ -45,12 +35,10 @@ describe('RoomService', () => {
       "userID": 1
       }
     ]);
-    // expect(domUpdates.appendCustomerOrders).to.have.been.called(3);
   });
 
   it('should get total all time room service cost for customer', () => {
     expect(roomService.getTotalRoomServiceCostForCustomer(1)).to.equal(9.89);
-    // expect(domUpdates.appendCustomerOrdersTotalCost).to.have.been.called(1);
   });
 
   it('should get all room service orders for searched date', () => {
@@ -62,7 +50,6 @@ describe('RoomService', () => {
         "userID": 90
       }
     ]);
-    // expect(domUpdates.appendRoomServiceOrdersForSelectedDate).to.have.been.called(3);
   });
 
 });

@@ -1,23 +1,15 @@
 import chai from 'chai';
 const expect = chai.expect;
-import spies from 'chai-spies'
-chai.use(spies);
 
 import Booking from '../src/Booking.js';
 import roomsData from '../data/rooms.js';
 import bookingsData from '../data/bookings.js';
-import domUpdates from '../src/domUpdates.js'
 
 describe('Booking', () => {
   let booking;
 
   beforeEach(() => {
     booking = new Booking(roomsData, bookingsData);
-    chai.spy.on(domUpdates, ['appendRoomsAvailToday', 'appendRoomsOccToday', 'appendMostPopDate', 'appendLeastPopDate'], () => true);
-  });
-
-  afterEach(() => {
-    chai.spy.restore(domUpdates)
   });
 
   it('should be a function', () => {
@@ -54,7 +46,6 @@ describe('Booking', () => {
 
   it('should get total rooms avail today', () => {
     expect(booking.totalRoomsAvailToday("2019/09/15")).to.equal(27);
-    // expect(domUpdates.appendRoomsAvailToday).to.have.been.called(1);
   });
 
   it('should get total room revenue for today', () => {
@@ -63,11 +54,11 @@ describe('Booking', () => {
 
   it('should get percentage of rooms occupied today', () => {
     expect(booking.percentageRoomsOccToday("2019/09/15")).to.equal(46);
-    // expect(domUpdates.appendRoomsOccToday).to.have.been.called(1);
   });
 
   it('should get object of dates and number of bookings per date', () => {
-    expect(booking.getPopularityOfDates()).to.deep.equal({
+    expect(booking.getPopularityOfDates()).to.deep.equal(
+      {
       '2019/10/19': 12,
       '2019/10/30': 18,
       '2019/09/01': 18,
@@ -178,12 +169,10 @@ describe('Booking', () => {
 
   it('should get most pop date', () => {
     expect(booking.getMostPopDates()).to.deep.equal(['2019/09/07', '2019/10/23', '2019/10/28']);
-    // expect(domUpdates.appendMostPopDate).to.have.been.called(3);
   });
 
   it('should get least pop date', () => {
     expect(booking.getLeastPopDates()).to.deep.equal(["2019/07/23"]);
-    // expect(domUpdates.appendLeastPopDate).to.have.been.called(1);
   });
 
   it('should find bookings for a user', () => {
@@ -195,8 +184,8 @@ describe('Booking', () => {
         "roomNumber": 44,
         "userID": 65
       }
-      ]);
-      expect(booking.findBookingsForCustomerForToday("2019/09/15", 65).length).to.equal(1);
+  ]);
+    expect(booking.findBookingsForCustomerForToday("2019/09/15", 65).length).to.equal(1);
   });
 
   it('should find rooms avail today', () => {

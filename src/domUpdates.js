@@ -30,7 +30,6 @@ const domUpdates = {
 
   appendRoomServiceOrders(orders) {
     orders.forEach((order) => {
-      // domUpdates.emptyRoomServiceOrders()
       $('#service-orders').append(`
         <p>Customer ID: ${order.userID}</p>
         <p>Food Item: ${order.food}</p>
@@ -38,11 +37,6 @@ const domUpdates = {
         <br>
       `);
     })
-  },
-
-//using?
-  emptyRoomServiceOrders() {
-    $('#service-orders').empty();
   },
 
   appendCustomerDropdown(id, name) {
@@ -75,11 +69,6 @@ const domUpdates = {
         <p>Cost: $${order.totalCost}</p>
       `);
     })
-  },
-
-//using?
-  emptyRoomServiceOrdersForSelectedDate() {
-    $('#searched-orders').empty();
   },
 
   appendAvailRoomsByType(rooms){
