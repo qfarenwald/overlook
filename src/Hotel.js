@@ -1,4 +1,3 @@
-// import User from './User.js';
 import Booking from './Booking.js';
 import RoomService from './RoomService.js';
 import domUpdates from './domUpdates.js';
@@ -12,7 +11,7 @@ class Hotel {
 
   totalRevenueToday(date) {
     let revenueToday = this.booking.totalRoomRevenueToday(date) + this.roomService.totalRoomServiceRevenueToday(date)
-    return revenueToday
+    return parseFloat(revenueToday.toFixed(2))
   }
 
   displayCustomers() {

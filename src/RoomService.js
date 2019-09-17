@@ -5,41 +5,40 @@ class RoomService {
 
   getRoomServiceOrdersToday(date) {
     let roomServiceOrders = this.roomServices.filter((service) => {
-      return service.date === date
+      return service.date === date;
     })
-    return roomServiceOrders
+    return roomServiceOrders;
   }
 
   totalRoomServiceRevenueToday(date) {
     let roomServiceOrders = this.getRoomServiceOrdersToday(date)
     return roomServiceOrders.reduce((num, room) => {
-      num += room.totalCost
-      return num
+      num += room.totalCost;
+      return num;
     }, 0)
   }
 
-// get all and show all... how only show up once?
   getAllRoomServiceForCustomer(id) {
     let roomServices = this.roomServices.filter((service) => {
-      return service.userID === parseInt(id)
+      return service.userID === parseInt(id);
     })
-    return roomServices
+    return roomServices;
   }
 
   getTotalRoomServiceCostForCustomer(id) {
     let allCustomerRoomService = this.getAllRoomServiceForCustomer(id)
     let totalCost = allCustomerRoomService.reduce((num, service) => {
-      num += service.totalCost
-      return num
+      num += service.totalCost;
+      return num;
     }, 0)
     return parseFloat(totalCost.toFixed(2))
   }
 
   getRoomServiceOrdersForSearchedDate(date) {
     let roomServiceOrders = this.roomServices.filter((service) => {
-      return service.date === date
+      return service.date === date;
     })
-    return roomServiceOrders
+    return roomServiceOrders;
   }
 
 }

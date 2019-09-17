@@ -4,7 +4,6 @@ import './css/base.scss';
 
 import './images/bright-colors-daylight-2742812.jpg'
 import Hotel from './Hotel.js';
-// import User from './User.js';
 import domUpdates from './domUpdates.js';
 
 let hotel;
