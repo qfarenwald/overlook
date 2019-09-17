@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 import './css/base.scss';
 
-import './images/bright-colors-daylight-2742812.jpg'
+import './images/bright-colors-daylight-2742812.jpg';
 import Hotel from './Hotel.js';
 import domUpdates from './domUpdates.js';
 
@@ -29,20 +29,20 @@ const openHotel = (date) => {
 
   $('.customer-info').hide();
 
-  $('#select-customer-button').on('click', function(event){
+  $('#select-customer-button').on('click', function(event) {
     $('.customer-info').show();
     let id = $('#name-option').val();
     let selectedUser = hotel.selectCustomer(id);
     let name = selectedUser.name;
     let date = getDate();
-    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)
+    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id);
     domUpdates.appendCustomerName(name);
-    domUpdates.appendCustomerOrders(hotel.roomService.getAllRoomServiceForCustomer(id))
+    domUpdates.appendCustomerOrders(hotel.roomService.getAllRoomServiceForCustomer(id));
     domUpdates.appendCustomerOrdersTotalCost(hotel.roomService.getTotalRoomServiceCostForCustomer(id));
-    $('#new-customer-button').prop('disabled', true)
+    $('#new-customer-button').prop('disabled', true);
     if (bookingsToday.length > 0) {
       $('#rooms-booking').show();
-      domUpdates.appendCustomerBookingForToday(hotel.booking.findBookingsForCustomerForToday(date, id))
+      domUpdates.appendCustomerBookingForToday(hotel.booking.findBookingsForCustomerForToday(date, id));
       $('#rooms-no-booking').hide();
     } else {
       $('#rooms-booking').hide();
@@ -52,17 +52,17 @@ const openHotel = (date) => {
     $('#select-room-type-section-dropdown').hide();
   });
 
-  $('#new-customer-button').on('click', function(event){
-    let id = hotel.users.length + 1
-    let name = $('#new-customer-input').val()
+  $('#new-customer-button').on('click', function(event) {
+    let id = hotel.users.length + 1;
+    let name = $('#new-customer-input').val();
     let user = hotel.makeNewCustomer(id, name);
     let date = getDate();
-    hotel.users.push(user)
-    hotel.displayCustomers()
+    hotel.users.push(user);
+    hotel.displayCustomers();
     $('.customer-info').show();
-    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)
+    let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id);
     domUpdates.appendCustomerName(name);
-    $('#new-customer-button').prop('disabled', true)
+    $('#new-customer-button').prop('disabled', true);
     if (bookingsToday.length > 0) {
       $('#rooms-booking').show();
       $('#rooms-no-booking').hide();
@@ -72,46 +72,46 @@ const openHotel = (date) => {
     }
     $('#select-room-type-section').hide();
     $('#select-room-type-section-dropdown').hide();
-    $('#new-customer-input').val('')
-    $('#new-customer-button').prop('disabled', true)
+    $('#new-customer-input').val('');
+    $('#new-customer-button').prop('disabled', true);
   });
 
-  $('#search-orders-button').on('click', function(event){
+  $('#search-orders-button').on('click', function(event) {
     let date = $('#search-orders-input').val();
-    domUpdates.appendRoomServiceOrdersForSelectedDate(hotel.roomService.getRoomServiceOrdersForSearchedDate(date))
-    $('#search-orders-input').val('')
-    $('#search-orders-button').prop('disabled', true)
-    $('#search-rooms-input').val('')
-    $('#search-rooms-button').prop('disabled', true)
+    domUpdates.appendRoomServiceOrdersForSelectedDate(hotel.roomService.getRoomServiceOrdersForSearchedDate(date));
+    $('#search-orders-input').val('');
+    $('#search-orders-button').prop('disabled', true);
+    $('#search-rooms-input').val('');
+    $('#search-rooms-button').prop('disabled', true);
   });
 
-  $('#new-booking-button').on('click', function(event){
+  $('#new-booking-button').on('click', function(event) {
     $('#select-room-type-section').show();
   });
 
-  $('#search-rooms-button-general').on('click', function(event){
+  $('#search-rooms-button-general').on('click', function(event) {
     let date = $('#search-rooms-input').val();
-    domUpdates.appendAllAvailRooms(hotel.booking.findRoomsAvailToday(date))
-    $('#search-rooms-input').val('')
-    $('#search-rooms-button-general').prop('disabled', true)
-    $('#search-rooms-input').val('')
-    $('#search-rooms-button-general').prop('disabled', true)
+    domUpdates.appendAllAvailRooms(hotel.booking.findRoomsAvailToday(date));
+    $('#search-rooms-input').val('');
+    $('#search-rooms-button-general').prop('disabled', true);
+    $('#search-rooms-input').val('');
+    $('#search-rooms-button-general').prop('disabled', true);
   });
 
-  $('#rooms-no-booking').on('click', function(event){
+  $('#rooms-no-booking').on('click', function(event) {
     if (event.target.id === "search-rooms-button") {
-       $('#select-room-type-section-dropdown').show();
-       let date = getDate();
-       let type = $('#room-option').val().toLowerCase()
-       let availRooms = hotel.booking.getRoomsAvailByType(date, type)
-       domUpdates.appendAvailRoomsByType(availRooms)
+      $('#select-room-type-section-dropdown').show();
+      let date = getDate();
+      let type = $('#room-option').val().toLowerCase();
+      let availRooms = hotel.booking.getRoomsAvailByType(date, type);
+      domUpdates.appendAvailRoomsByType(availRooms);
     }
     if (event.target.id === "book-button") {
       let id = $('#name-option').val();
       let date = getDate();
       let roomNumber = event.target.parentNode.firstElementChild.childNodes[1].innerText;
-      let newBooking = hotel.booking.makeNewBooking(id, date, roomNumber)
-      hotel.booking.bookings.push(newBooking)
+      let newBooking = hotel.booking.makeNewBooking(id, date, roomNumber);
+      hotel.booking.bookings.push(newBooking);
     }
   });
 };
@@ -125,13 +125,13 @@ const getDate = () => {
   return today;
 };
 
-domUpdates.appendDate(getDate())
+domUpdates.appendDate(getDate());
 
 $('.tabs-info div').hide();
 $('.tabs-info div:first').show();
 $('.tabs-nav li:first').addClass('tab-active');
 
-$('.tabs-nav a').on('click', function(event){
+$('.tabs-nav a').on('click', function(event) {
   event.preventDefault();
   $('.tabs-nav li').removeClass('tab-active');
   $(this).parent().addClass('tab-active');
@@ -139,32 +139,32 @@ $('.tabs-nav a').on('click', function(event){
   $($(this).attr('href')).show();
 });
 
-$('#new-customer-button').prop('disabled', true)
+$('#new-customer-button').prop('disabled', true);
 
-$('#new-customer-input').keyup((e) => {
+$('#new-customer-input').keyup((event) => {
   if ($('#new-customer-input').val() !== '') {
     $('#new-customer-button').prop('disabled', false);
   } else {
-    $('#new-customer-button').prop('disabled', true)
+    $('#new-customer-button').prop('disabled', true);
   }
 });
 
-$('#search-orders-button').prop('disabled', true)
+$('#search-orders-button').prop('disabled', true);
 
-$('#search-orders-input').keyup((e) => {
+$('#search-orders-input').keyup((event) => {
   if ($('#search-orders-input').val() !== '') {
     $('#search-orders-button').prop('disabled', false);
   } else {
-    $('#search-orders-button').prop('disabled', true)
+    $('#search-orders-button').prop('disabled', true);
   }
 });
 
-$('#search-rooms-button-general').prop('disabled', true)
+$('#search-rooms-button-general').prop('disabled', true);
 
-$('#search-rooms-input').keyup((e) => {
+$('#search-rooms-input').keyup((event) => {
   if ($('#search-rooms-input').val() !== '') {
     $('#search-rooms-button-general').prop('disabled', false);
   } else {
-    $('#search-rooms-button-general').prop('disabled', true)
+    $('#search-rooms-button-general').prop('disabled', true);
   }
 });
