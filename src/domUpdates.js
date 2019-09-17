@@ -85,6 +85,22 @@ const domUpdates = {
         </div>
       `);
     })
+  },
+
+  appendAllAvailRooms(rooms){
+      rooms.forEach((room) => {
+      $('#room-avail').append(`
+        <div>
+        <p>Room Number: <span>${room.number}</span></p>
+        <p>Number Of Beds: ${room.numBeds}</p>
+        <p>Size of Beds: ${room.bedSize}</p>
+        <p>Bidet: ${room.bidet}</p>
+        <p>Cost Per Night: ${room.costPerNight}</p>
+        <button id="book-button" type="button">BOOK</button>
+        <br>
+        </div>
+      `);
+    })
   }
 
 };

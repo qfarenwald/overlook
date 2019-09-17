@@ -88,6 +88,15 @@ const openHotel = (date) => {
     $('#select-room-type-section').show();
   });
 
+  $('#search-rooms-button-general').on('click', function(event){
+    let date = $('#search-rooms-input').val();
+    domUpdates.appendAllAvailRooms(hotel.booking.findRoomsAvailToday(date))
+    $('#search-rooms-input').val('')
+    $('#search-rooms-button-general').prop('disabled', true)
+    $('#search-rooms-input').val('')
+    $('#search-rooms-button-general').prop('disabled', true)
+  });
+
   $('#rooms-no-booking').on('click', function(event){
     if (event.target.id === "search-rooms-button") {
        $('#select-room-type-section-dropdown').show();
@@ -147,16 +156,14 @@ $('#search-orders-input').keyup((e) => {
   } else {
     $('#search-orders-button').prop('disabled', true)
   }
-
 });
 
-$('#search-rooms-button').prop('disabled', true)
+$('#search-rooms-button-general').prop('disabled', true)
 
 $('#search-rooms-input').keyup((e) => {
   if ($('#search-rooms-input').val() !== '') {
-    $('#search-rooms-button').prop('disabled', false);
+    $('#search-rooms-button-general').prop('disabled', false);
   } else {
-    $('#search-rooms-button').prop('disabled', true)
+    $('#search-rooms-button-general').prop('disabled', true)
   }
-
 });
