@@ -20,11 +20,11 @@ Promise.all([
   .catch(err => console.log(err))
 
 const openHotel = (date) => {
-  hotel.booking.totalRoomsAvailToday(date)
-  hotel.booking.percentageRoomsOccToday(date)
+  domUpdates.appendRoomsAvailToday(hotel.booking.totalRoomsAvailToday(date))
+  domUpdates.appendRoomsOccToday(hotel.booking.percentageRoomsOccToday(date))
   hotel.totalRevenueToday(date)
-  hotel.booking.getMostPopDates()
-  hotel.booking.getLeastPopDates()
+  domUpdates.appendMostPopDate(hotel.booking.getMostPopDates())
+  domUpdates.appendLeastPopDate(hotel.booking.getLeastPopDates())
   hotel.roomService.getRoomServiceOrdersToday(date)
   hotel.displayCustomers()
 

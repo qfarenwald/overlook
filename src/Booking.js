@@ -14,7 +14,6 @@ class Booking {
 
   totalRoomsAvailToday(date) {
     let roomsBooked = this.findRoomsBooked(date)
-    domUpdates.appendRoomsAvailToday(this.rooms.length - roomsBooked.length)
     return this.rooms.length - roomsBooked.length
   }
 
@@ -32,7 +31,6 @@ class Booking {
 
   percentageRoomsOccToday(date) {
     let roomsBooked = this.findRoomsBooked(date)
-    domUpdates.appendRoomsOccToday((roomsBooked.length / this.rooms.length) * 100)
     return (roomsBooked.length / this.rooms.length) * 100
   }
 
@@ -61,9 +59,6 @@ class Booking {
     let mostPopularDates = popDatesKeys.filter((date) => {
       return popDates[date] === sortPopDates[0]
     }).sort()
-    mostPopularDates.forEach((date) => {
-      domUpdates.appendMostPopDate(date)
-    })
     return mostPopularDates
   }
 
@@ -74,7 +69,6 @@ class Booking {
     let leastPopularDates = popDatesKeys.filter((date) => {
       return popDates[date] === sortPopDates[sortPopDates.length - 1]
     }).sort()
-    domUpdates.appendLeastPopDate(leastPopularDates)
     return leastPopularDates
   }
 

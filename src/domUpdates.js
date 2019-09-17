@@ -19,7 +19,9 @@ const domUpdates = {
   },
 
   appendMostPopDate(popularDates) {
-    $('#most-pop').append(`<p>${popularDates}</p>`);
+    popularDates.forEach((date) => {
+      $('#most-pop').append(`<p>${date}</p>`);
+    })
   },
 
   appendLeastPopDate(popularDates) {
