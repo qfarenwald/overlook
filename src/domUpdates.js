@@ -28,8 +28,16 @@ const domUpdates = {
     $('#least-pop').append(`<p>${popularDates}</p>`);
   },
 
-  appendRoomServiceOrders(order) {
-    $('#service-orders').append(`<p>${order}</p>`);
+  appendRoomServiceOrders(orders) {
+    orders.forEach((order) => {
+      // domUpdates.emptyRoomServiceOrders()
+      $('#service-orders').append(`
+        <p>Customer ID: ${order.userID}</p>
+        <p>Food Item: ${order.food}</p>
+        <p>Cost: $${order.totalCost}</p>
+        <br>
+      `);
+    })
   },
 
 //using?
@@ -45,16 +53,28 @@ const domUpdates = {
     $('.customer-name-place').text(name)
   },
 
-  appendCustomerOrders(order) {
-    $('#customer-all-orders').append(`<p>${order}</p>`);
+  appendCustomerOrders(orders) {
+    orders.forEach((order) => {
+      $('#customer-all-orders').append(`
+        <p>Date: ${order.date}</p>
+        <p>Food Item: ${order.food}</p>
+        <p>Cost: $${order.totalCost}</p>
+      `);
+    })
   },
 
   appendCustomerOrdersTotalCost(cost) {
-    $('#customer-all-orders-cost').append(`<p>${cost}</p>`);
+    $('#customer-all-orders-cost').append(`<p>$${cost}</p>`);
   },
 
-  appendRoomServiceOrdersForSelectedDate(order) {
-    $('#searched-orders').append(`<p>${order}</p>`);
+  appendRoomServiceOrdersForSelectedDate(orders) {
+    orders.forEach((order) => {
+      $('#searched-orders').append(`
+        <p>Customer ID: ${order.userID}</p>
+        <p>Food Item: ${order.food}</p>
+        <p>Cost: $${order.totalCost}</p>
+        `);
+    })
   },
 
 //using?

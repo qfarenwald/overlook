@@ -25,7 +25,7 @@ const openHotel = (date) => {
   hotel.totalRevenueToday(date)
   domUpdates.appendMostPopDate(hotel.booking.getMostPopDates())
   domUpdates.appendLeastPopDate(hotel.booking.getLeastPopDates())
-  hotel.roomService.getRoomServiceOrdersToday(date)
+  domUpdates.appendRoomServiceOrders(hotel.roomService.getRoomServiceOrdersToday(date))
   hotel.displayCustomers()
 
   $('.customer-info').hide();
@@ -37,9 +37,9 @@ const openHotel = (date) => {
     let name = selectedUser.name;
     let date = getDate();
     domUpdates.appendCustomerName(name);
+    domUpdates.appendCustomerOrders(hotel.roomService.getAllRoomServiceForCustomer(id))
     let bookingsToday = hotel.booking.findBookingsForCustomerForToday(date, id)
-    hotel.roomService.showAllRoomServiceForCustomer(id);
-    hotel.roomService.getTotalRoomServiceCostForCustomer(id);
+    domUpdates.appendCustomerOrdersTotalCost(hotel.roomService.getTotalRoomServiceCostForCustomer(id));
     $('#new-customer-button').prop('disabled', true)
     if (bookingsToday.length > 0) {
       $('#rooms-booking').show();
@@ -78,7 +78,7 @@ const openHotel = (date) => {
 
   $('#search-orders-button').on('click', function(event){
     let date = $('#search-orders-input').val();
-    hotel.roomService.getRoomServiceOrdersForSearchedDate(date)
+    domUpdates.appendRoomServiceOrdersForSelectedDate(hotel.roomService.getRoomServiceOrdersForSearchedDate(date))
     $('#search-orders-input').val('')
     $('#search-orders-button').prop('disabled', true)
     $('#search-rooms-input').val('')
