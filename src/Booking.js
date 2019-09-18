@@ -105,11 +105,11 @@ class Booking {
     return newBooking;
   }
 
-  // findRoomBasedOnBookingID(roomNum) {
-  //   return this.rooms.find((room) => {
-  //     return room.number === roomNum
-  //   })
-  // }
+  findRoomBasedOnBookingID(roomNum) {
+    return this.rooms.find((room) => {
+      return room.number === roomNum
+    })
+  }
 
 }
 

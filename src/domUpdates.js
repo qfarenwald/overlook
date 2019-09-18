@@ -103,12 +103,14 @@ const domUpdates = {
     })
   },
 
-  appendCustomerBookingForToday(bookings) {
-    bookings.forEach((booking) => {
+  appendCustomerBookingForToday(room) {
       $('#customer-booking-info-fo-today').append(`
-        <p>Room Number: <span>${booking.roomNumber}</span></p>
+        <p>Room Number: <span>${room.number}</span></p>
+        <p>Number Of Beds: ${room.numBeds}</p>
+        <p>Size of Beds: ${room.bedSize}</p>
+        <p>Bidet: ${room.bidet}</p>
+        <p>Cost Per Night: ${room.costPerNight}</p>
       `);
-    })
   }
 };
 

@@ -42,7 +42,10 @@ const openHotel = (date) => {
     $('#new-customer-button').prop('disabled', true);
     if (bookingsToday.length > 0) {
       $('#rooms-booking').show();
-      domUpdates.appendCustomerBookingForToday(hotel.booking.findBookingsForCustomerForToday(date, id));
+      // domUpdates.appendCustomerBookingForToday(hotel.booking.findBookingsForCustomerForToday(date, id));
+      let roomNum = hotel.booking.findBookingsForCustomerForToday(date, id)[0].roomNumber;
+      console.log(roomNum)
+      domUpdates.appendCustomerBookingForToday(hotel.booking.findRoomBasedOnBookingID(roomNum));
       $('#rooms-no-booking').hide();
     } else {
       $('#rooms-booking').hide();
