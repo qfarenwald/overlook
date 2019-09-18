@@ -42,7 +42,6 @@ const openHotel = (date) => {
     $('#new-customer-button').prop('disabled', true);
     if (bookingsToday.length > 0) {
       $('#rooms-booking').show();
-      // domUpdates.appendCustomerBookingForToday(hotel.booking.findBookingsForCustomerForToday(date, id));
       let roomNum = hotel.booking.findBookingsForCustomerForToday(date, id)[0].roomNumber;
       console.log(roomNum)
       domUpdates.appendCustomerBookingForToday(hotel.booking.findRoomBasedOnBookingID(roomNum));
@@ -115,6 +114,10 @@ const openHotel = (date) => {
       let roomNumber = event.target.parentNode.firstElementChild.childNodes[1].innerText;
       let newBooking = hotel.booking.makeNewBooking(id, date, roomNumber);
       hotel.booking.bookings.push(newBooking);
+      $("#book-button").css("background-color", "green");
+      console.log(newBooking)
+      // $('#rooms-no-booking').hide();
+      // $('#rooms-booking').show();
     }
   });
 };
