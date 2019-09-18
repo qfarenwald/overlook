@@ -39,5 +39,3 @@ Project is running at http://localhost:8080/
 ```
 
 Go to `http://localhost:8080/` in your browser to view the site
-
-<!-- ![Overlook***](https://user-images.githubusercontent.com/49107377/64707435-3ad56500-d470-11e9-8461-768f349c07eb.gif) -->
