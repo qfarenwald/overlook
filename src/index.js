@@ -43,7 +43,6 @@ const openHotel = (date) => {
     if (bookingsToday.length > 0) {
       $('#rooms-booking').show();
       let roomNum = hotel.booking.findBookingsForCustomerForToday(date, id)[0].roomNumber;
-      console.log(roomNum)
       domUpdates.appendCustomerBookingForToday(hotel.booking.findRoomBasedOnBookingID(roomNum));
       $('#rooms-no-booking').hide();
     } else {
