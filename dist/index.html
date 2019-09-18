@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Webpack Starter Kit</title>
+  </head>
+  <body>
+    <header>
+      <h1>THE OVERLOOK HOTEL</h1>
+      <h2 id="date">2019/09/15</h2>
+    </header>
+    <main class="tabs">
+      <ul class="tabs-nav">
+        <li class="tabs-li"><a href="#tab-main">MAIN</a></li>
+        <li class="tabs-li"><a href="#tab-customer">CUSTOMER</a></li>
+        <li class="tabs-li"><a href="#tab-rooms">ROOMS</a></li>
+        <li class="tabs-li"><a href="#tab-orders">ORDERS</a></li>
+      </ul>
+      <section class="tabs-info">
+        <div class="tab" id="tab-main">
+          <section class="default-info">
+            <h3>TODAY IN REVIEW</h3>
+            <h4>ROOMS AVAILABLE</h4>
+              <p id="rooms-avail-today"></p>
+            <h4>ROOMS OCCUPIED</h4>
+              <p id="rooms-occ-today"></p>
+            <h4>TOTAL REVENUE</h4>
+              <p id="revenue-today"></p>
+          </section>
+          <section class="customer-info">
+            <h3>CUSTOMER</h3>
+              <p class="customer-name-place">NO CUSTOMER SELECTED</p>
+              <p id="user-name"></p>
+          </section>
+        </div>
+        <div class="tab" id="tab-customer">
+          <section class="default-info">
+            <h3>SELECT CUSTOMER</h3>
+              <select id="name-option" name="users"></select>
+              <br>
+              <button id="select-customer-button" type="button">SELECT CUSTOMER</button>
+            <h3 class="h3-low">CREATE NEW CUSTOMER</h3>
+              <input id="new-customer-input" type="text" placeholder="ENTER NEW CUSTOMER NAME">
+              <br>
+              <button id="new-customer-button" type="button">CREATE NEW CUSTOMER</button>
+          </section>
+          <section class="customer-info">
+            <h3>CUSTOMER</h3>
+              <p class="customer-name-place">NO CUSTOMER SELECTED</p>
+              <p id="user-name"></p>
+          </section>
+        </div>
+        <div class="tab" id="tab-rooms">
+          <section class="default-info">
+            <h3>ROOMS IN REVIEW</h3>
+              <h4>MOST ROOMS BOOKED</h4>
+                <p id="most-pop"></p>
+              <h4>MOST ROOMS AVAILABLE</h4>
+                <p id="least-pop"></p>
+            <h3>SEARCH AVAILABLE ROOMS</h3>
+              <input id="search-rooms-input" type="text" placeholder="ENTER DATE">
+              <br>
+              <button id="search-rooms-button-general" type="button">SEARCH ROOMS</button>
+              <p id="room-avail"></p>
+          </section>
+          <section class="customer-info" id="rooms-no-booking">
+            <h3>CUSTOMER</h3>
+              <p class="customer-name-place">NO CUSTOMER SELECTED</p>
+              <p id="user-name"></p>
+              <h4 class="customer-info">BOOKINGS</h4>
+                <p id="customer-booking-info">NO CURRENT BOOKINGS</p>
+                <button id="new-booking-button" type="button">CREATE NEW BOOKING</button>
+                <div id="select-room-type-section">
+                  <h4 class="customer-info">ROOM TYPE</h4>
+                    <select id="room-option" name="rooms">
+                      <option value="Single Room" id="1-room-option">Single Room</option>
+                      <option value="Suite" id="1-room-option">Suite</option>
+                      <option value="Junior Suite" id="1-room-option">Junior Suite</option>
+                      <option value="Residential Suite" id="2-room-option">Residential Suite</option>
+                    </select>
+                    <br>
+                    <button id="search-rooms-button" type="button">SEARCH FOR ROOM TYPE</button>
+                </div>
+                <div id="select-room-type-section-dropdown">
+                    <p id="room-filter"></p>
+                </div>
+          </section>
+          <section class="customer-info" id="rooms-booking">
+            <h3>CUSTOMER</h3>
+              <p class="customer-name-place">NO CUSTOMER SELECTED</p>
+              <p id="user-name"></p>
+              <h4 class="customer-info">BOOKINGS</h4>
+                <p id="customer-booking-info-fo-today"></p>
+              <h4 class="customer-info">ROOM SERVICES</h4>
+              <p id="room-service-customer-info">NO ROOM SERVICE ORDERS</p>
+              <button id="add-room-service-button" type="button">ADD ROOM SERVICE</button>
+          </section>
+        </div>
+        <div class="tab" id="tab-orders">
+          <section class="default-info">
+            <h3>ORDERS FOR TODAY</h3>
+              <h4>ROOM SERVICE</h4>
+                <p id="service-orders"></p>
+            <h3>SEARCH FOR ORDERS</h3>
+                <input id="search-orders-input" type="text" placeholder="ENTER DATE">
+                <br>
+                <button id="search-orders-button" type="button">SEARCH ORDERS</button>
+                <p id="searched-orders"></p>
+          </section>
+          <section class="customer-info">
+            <h3>CUSTOMER</h3>
+              <p class="customer-name-place" id="customer-room-service">NO CUSTOMER SELECTED</p>
+              <h4 class="customer-info">ALL ORDERS</h4>
+                <p id="customer-all-orders"></p>
+              <h4 class="customer-info">TOTAL COST</h4>
+                <p id="customer-all-orders-cost"></p>
+          </section>
+        </div>
+      </section>
+    </main>
+  <script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
