@@ -118,6 +118,7 @@ const openHotel = (date) => {
       console.log(newBooking)
       // $('#rooms-no-booking').hide();
       // $('#rooms-booking').show();
+      // domUpdates.appendCustomerBookingForToday(hotel.booking.findRoomBasedOnBookingID(roomNumber));
     }
   });
 };

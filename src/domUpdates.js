@@ -48,6 +48,7 @@ const domUpdates = {
   },
 
   appendCustomerOrders(orders) {
+    $('#customer-all-orders').empty();
     orders.forEach((order) => {
       $('#customer-all-orders').append(`
         <p>Date: ${order.date}</p>
@@ -58,6 +59,7 @@ const domUpdates = {
   },
 
   appendCustomerOrdersTotalCost(cost) {
+    $('#customer-all-orders-cost').empty();
     $('#customer-all-orders-cost').append(`<p>$${cost}</p>`);
   },
 
