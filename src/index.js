@@ -119,10 +119,11 @@ const openHotel = (date) => {
       hotel.booking.bookings.push(newBooking);
       $("#book-button").css("background-color", "green");
       console.log(newBooking)
-      // $('#rooms-no-booking').hide();
-      // $('#rooms-booking').show();
-      // domUpdates.appendCustomerBookingForToday(hotel.booking.findRoomBasedOnBookingID(roomNumber));
     }
+  });
+
+  $('#add-room-service-button').on('click', function(event) {
+      $("#add-room-service-button").css("background-color", "green");
   });
 };
 
